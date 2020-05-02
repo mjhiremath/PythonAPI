@@ -1,0 +1,3019 @@
+<!DOCTYPE html>
+		<html lang= "en_US" >
+	<head>
+      <script type="text/javascript">
+      </script>
+		<link rel="stylesheet" media="screen" href="/stylesheets/fontawesome.css?db59a79764d9bb82e2c17647dcb37bd3" />
+		<script src="/javascripts/jquery/jquery3_3_1.js?a09e13ee94d51c524b7e2a728c7d4039"></script>
+		<script src="/javascripts/date_util.js?5524ad0d52c125bbfb869a9105d4de81"></script>
+    	<script src="/javascripts/wtk_base64.js?c3ef24c5a7a281b3413179b1f18c0af2"></script>
+
+       <script type="text/javascript">
+       //this method is used for find the browser version no
+        function browser_version()
+		{
+		  var N= navigator.appName, ua= navigator.userAgent, tem;
+		  var M= ua.match(/(opera|chrome|safari|firefox|msie|trident)\/?\s*(\.?\d+(\.\d+)*)/i);
+		  if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) {M[2]=tem[1];}
+		  M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
+		  console.log(M[1])
+		  return M[1] ? parseInt(M[1].split(',')[0]) : 0;
+		}
+       </script>
+
+
+        <script src="/javascripts/bootstrap/popper.min.js?a22f3f7e61af6a069aa6b422537c3f49"></script>
+        <script src="/javascripts/jquery-ui/jquery-ui.js?ab5284de5e3d221e53647fd348e5644b"></script>
+        <script src="/javascripts/jquery-dependencies/highstock.js?4f3859683099dbd252eec3f8c70d3535"></script>
+		<link rel="stylesheet" media="screen" href="/stylesheets/jquery-ui/jquery-ui-customized.css?6fd5a6e8197041971d02cf62d06f4b14" />
+
+
+		<title>
+				Portal Login
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+		<!-- < --><!-- %= favicon_link_tag "/branding/theme-"+controller.get_frm_session('rbranding').theme_value(controller.get_frm_session('rbranding').value("theme"))+"/images/logo.jpg" % --><!-- > -->
+		        <script src="/javascripts/jquery-ui/jquery-ui.js?ab5284de5e3d221e53647fd348e5644b"></script>
+		        <script src="/javascripts/jquery-ui-timepicker-addon.js?ea50ef55c14c11e6264fe5d06aad8b62"></script>
+	 		<link rel="stylesheet" media="screen" href="/stylesheets/overlay.css?3668ad9086ea5b35308db90947db3962" />
+				<link rel="stylesheet" media="screen" href="/branding/theme-enterprise.theme/custom_default.css?5f140f2e7245204014f8bd678a1d4aaf" />
+		<!-- iterate through all d css files and include  -->
+		<link rel="stylesheet" media="screen" href="/stylesheets/jquery-ui/jquery.alerts.css?f61f496d311c711811d5160b269c7030" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/bootstrap.min.css?450fc463b8b1a349df717056fbb3e078" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/bootstrap_movius.css?6868f3fd3340398611833ffad1f50e6a" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/bootstrap-select.min.css?5b22f1e0f9395b046f0e5d02032eb157" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/bootstrap_tag.css?ea5527bf3b939aa2c45870e86c65f6a9" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/daterangepicker.css?93c1c22835671dbd03c7370384b8bb45" />
+			<link rel="stylesheet" media="screen" href="/stylesheets/bootstrap/bootstrap-multiselect.css?c60bb629fae1107d871c5279928427fc" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0"/>
+	</head>
+	<body class=" height100">
+			<div class="container-fluid height100">
+		<script src="/javascripts/XORCipher.js?a6d4e93ad8f393d2ddabc8d3a720b636"></script>
+<div class="row homeuser_bg height100">
+      <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 pos-fixed nopadding">
+        <div class="container-fluid height100">
+          <div class="row height100">
+            <img src="/branding_previews/images/login_background.png" class="img-responsive eap-login-img" />
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 nopadding login-right-height" style="position: fixed;right:0">
+        <div class="container-fluid">
+          <div class="b-row">
+            
+            <div class="col-sm-12 container1  pos-absolute" >
+              
+<style>
+/*  .help_for_tab{display:none}
+  .help_for_part_of_index{display:none}
+  .help{display:none}*/
+</style>
+<div class="container-fluid">
+	<div class="b-row headerblock">
+
+	<!--%
+	if(session[:branding] == nil)
+	str = "/branding/logo.jpg"
+	else str = session[:branding].value("top_logo")
+	end%-->
+<!-- 		<div class="col-sm-5">
+			<div class="container-fluid">
+				<div class="b-row">
+						<img src="/branding/theme-enterprise.theme/images/logo_big_login.png"
+						class="img-responsive logo height100px" alt="Movius" />
+				</div>
+			</div>
+		</div> -->
+		<div class="col-sm-2">
+			<div class="container-fluid">
+				<div class="b-row">
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 float-right nopadding"><!-- toprightblock -->
+			<div class="container-fluid">
+				<div class="b-row">
+					<div class="col-sm-12 right-top nopadding">
+						<div class="container-fluid">
+							<div class="b-row">
+								<ul class="top-nav-right nomargin nopadding">
+									<div class="profile-as">
+											<li>
+											</li>
+						</div>
+						<div class="login-as display-center xs-padding-top-bottom">
+
+								<li class="col-sm-7 select_language text-right text-capitalize" title='Select language'>
+									Select language
+								</li>
+								<div class="col-sm-5 nopadding">
+									<div class="col-sm-12 nopadding">
+										<div class="container-fluid">
+											<div class="b-row">
+                                              <button type="button" class="btn btn-default dropdown-toggle line-height-2 bg-white col  available_number_select_org1 text-left brown-regular xxs-padding-left-right" data-toggle="dropdown" id="category_list" title="Select language">
+                                                Select language
+                                              </button>
+                                              <div class="dropdown-menu available_number_select_org_list1">
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="en_US" title="English" onclick="changelocale(this.getAttribute('value'));">English</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="en_AU" title="English[Australian]" onclick="changelocale(this.getAttribute('value'));">English[Australian]</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="en_WL" title="English[White Label]" onclick="changelocale(this.getAttribute('value'));">English[White Label]</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="es_US" title="Español" onclick="changelocale(this.getAttribute('value'));">Español</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="fr_FR" title="Français" onclick="changelocale(this.getAttribute('value'));">Français</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="fr_CA" title="Français[Canadien]" onclick="changelocale(this.getAttribute('value'));">Français[Canadien]</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="fr_WL" title="Français[étiquette blanche]" onclick="changelocale(this.getAttribute('value'));">Français[étiquette blanche]</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="is_IS" title="Icelandic" onclick="changelocale(this.getAttribute('value'));">Icelandic</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="it_IT" title="Italiano" onclick="changelocale(this.getAttribute('value'));">Italiano</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="zh_CN" title="中文" onclick="changelocale(this.getAttribute('value'));">中文</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="pt_BR" title="Português" onclick="changelocale(this.getAttribute('value'));">Português</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="ar_SA" title="العربية" onclick="changelocale(this.getAttribute('value'));">العربية</li>
+                                                  <li class="xs-padding-left-right col textellipsis cursor bg-movius-hover" href="void" value="nl_NL" title="Nederlands" onclick="changelocale(this.getAttribute('value'));">Nederlands</li>
+                                              </div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="part_index_res" style="padding-left: 30px;" ></div>
+</div>
+</div>
+</div>
+<div class="nav hide">
+	<ul class="topnav">
+
+		<li>
+		</li>
+
+</ul>
+<ul style="float:right;" class="topnav">
+</ul>
+</div>
+
+
+
+
+<!-- The overlay Locale -->
+<div class="overlay" id="locale_overlay1" style="display:none;"></div>
+<div class="box org_newuserwith3cols" id="locale_box1"  >
+	<div class="topcurve">
+		<div class="rgt"></div>
+	</div>
+
+	<div class="midbg selected_border" style="background-color: #ffffff;"> <a class="boxclose locale_cancel" id="locale_cancel" href="#null"></a>
+		<h3>Change Language</h3>
+		<div class="white_block">
+			<div class="topcurve">
+				<div class="rgt"></div>
+			</div>
+			<div class="midblock" id="locale_box_a1">
+				<ul>
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=en_WL" class="viewdetail" locale_value="en_WL">English[White Label]</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=es_US" class="viewdetail" locale_value="es_US">Español</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=fr_FR" class="viewdetail" locale_value="fr_FR">Français</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=fr_CA" class="viewdetail" locale_value="fr_CA">Français[Canadien]</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=fr_WL" class="viewdetail" locale_value="fr_WL">Français[étiquette blanche]</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=is_IS" class="viewdetail" locale_value="is_IS">Icelandic</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=it_IT" class="viewdetail" locale_value="it_IT">Italiano</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=zh_CN" class="viewdetail" locale_value="zh_CN">中文</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=pt_BR" class="viewdetail" locale_value="pt_BR">Português</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=ar_SA" class="viewdetail" locale_value="ar_SA">العربية</a>
+						</li>
+
+						<li style="border-bottom-style: none">
+							<a style="float:none" href="/login/index?locale=nl_NL" class="viewdetail" locale_value="nl_NL">Nederlands</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="bottomcurve">
+					<div class="rgt"></div>
+				</div>
+			</div>
+			<!--Button block start-->
+			<div class="roundblockleft theme_color locale_cancel"> <a href="#null">Close</a> </div>
+			<!--Button block end-->
+			<div class="clear"></div>
+		</div>
+
+
+		<div class="bottomcurve">
+			<div class="rgt"></div>
+		</div>
+	</div>
+
+
+	<!-- The overlay -->
+	<div class="overlay" id="overlay" style="display:none;"></div>
+	<div class="box" id="box">
+
+		<div class="midbg selected_border selected_color">
+			<div class="white_block">
+
+				<div id="midblock"  class="midblock">
+					<div class="loaderimg" id="loaderimg_overlay">&nbsp;<br/>&nbsp;</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="/javascripts/jquery-ui/jquery.alerts.js?ddb93b0a7846c3f873abd92b0d3233b7"></script>
+	<script type="text/javascript">
+
+		$('#gbl-srch-plchdr').on('keypress', function(e) {
+			var code = e.keyCode || e.which;
+			if(code==13){
+				if($(this).val()!="")
+				{
+					search_users($(this).val());
+				}
+				else
+				{
+					$("#search_results").css('display','none');
+				}
+				return false;
+        // Enter pressed... do anything here...
+      }
+    });
+
+
+		$('#gbl-srch-plchdr').on('focus', function(e) {
+			if($('#gbl-srch-plchdr').val().length == 0){
+				$('#usr_srch_blk_wrp li').empty();
+			}
+		});
+
+		var brandingtabtext;
+
+		$(document).ready(function() {
+		});
+
+		function fill_midblock(url,callback){
+			$('.viewdetail').blur();
+			window.scrollTo(0,0);
+
+			$('#overlay').fadeIn('fast',function(){
+				$('#box').animate({'top':'7%'},500);
+                    // if(bool_remove_parent==true)
+                    // $('#midblock > div').last().remove();
+                    $('#midblock > div').hide();
+                    $('#midblock #loaderimg_overlay').show();
+                    var fillstr = url.split("?");
+                    var fillurl = fillstr[0];
+                    var fillparam = "authenticity_token="+encodeURIComponent('r0boNwlo1Q8QYdoR5YU6gGxewnivjQ2yYjXMzqBkREBbAH3FeTXwwqlU9mpAXsZGi236G5k3i6I0uR325EKX9Q==')+"&";
+                    if(fillstr.length>1){
+                    	fillparam = fillparam + fillstr[1];
+                    }
+                    $.post(fillurl,fillparam,function(data)
+                    {
+                    	$('#overlay').css('display','block');
+                    	$('#midblock').append(data);
+                    	$('#midblock #loaderimg_overlay').hide();
+                    	do_changes_for_rtl('midblock');
+                    	$(".boxclose").attr("title","Cancel. Any unsaved modification will be lost.")
+                    });
+
+                  });
+		}
+		function fill_midblocks(url,display_id,disable_id,callback){
+
+			var fillstr = url.split("?");
+			var fillurl = fillstr[0];
+			var fillparam = "authenticity_token="+encodeURIComponent('myRafcmefsln1r1ACDy9AtKN9O5z2WQMrhWaREHBhyhvYs+PucNbBN7jkTut50HENb7MjUVj4hz4mUt8BedUnQ==')+"&";
+			if(fillstr.length>1){
+				fillparam = fillparam + fillstr[1];
+			}
+			$.post(fillurl,fillparam,function(data)
+				{ 	$('#'+display_id).css('display','block');
+				$('#'+disable_id).css('display','none');
+				$('#'+display_id).html(data);
+				if(callback != undefined)
+				{
+					$('.out-sng-details-blk').html(callback);
+				}
+				setTimeout(function(){
+					var tableTbdyHgt = $('#ent_admin_user').outerHeight();
+					var tableUsrTbdyHgt = $('#ent_user').outerHeight();
+					if ($('#ent_user').length > 0) {
+						var totalTbleoutrHgt = (tableUsrTbdyHgt - 95);
+					}else if ($('#ent_admin_user').length > 0) {
+						if(tableTbdyHgt > 95){
+							var totalTbleoutrHgt = (tableTbdyHgt - 95);
+						} else{
+							var totalTbleoutrHgt = tableTbdyHgt;
+						}
+					}
+					console.log("testing user edit");
+					var addUsrFrmHgt = $('#user_details_div').outerHeight();
+                        //var custScrollHeight = $(window).height() - $('#users_edit_menu_div').offset().top - 34;
+                        console.log(totalTbleoutrHgt);
+                      //  var addUsrFrmHgt = $('#users_edit_menu_div').outerHeight();
+                      var custScrollHeight = $(window).height() - $('#users_edit_menu_div').offset().top - 34;
+                      console.log(addUsrFrmHgt + " is " + totalTbleoutrHgt + ' testing is ' + custScrollHeight);
+                      var menuOffsetIs = $('#users_edit_menu_div').offset().top;
+                      var footerHeight = $('.footer').outerHeight();
+                      var totOtrGblHgt = (($(document).height()) - (menuOffsetIs + footerHeight));
+
+                      if(typeof totalTbleoutrHgt != 'undefined'){
+                      	console.log("Table height is" + totalTbleoutrHgt);
+                      	if( addUsrFrmHgt > totalTbleoutrHgt){
+                      		console.log(addUsrFrmHgt + 'fte' + totalTbleoutrHgt);
+                      		if(totalTbleoutrHgt > addUsrFrmHgt){
+                      			console.log(totalTbleoutrHgt + 'htyr' + addUsrFrmHgt);
+                      			$('#users_edit_menu_div').slimScroll({
+                      				height: totOtrGblHgt,
+                      				alwaysVisible: true
+                      			});
+                      		}else if(totalTbleoutrHgt < addUsrFrmHgt){
+                      			console.log(totalTbleoutrHgt + 'nhtyd' + addUsrFrmHgt);
+                      			if(addUsrFrmHgt < totalTbleoutrHgt){
+                      				console.log(addUsrFrmHgt + 'gtydre' + totalTbleoutrHgt);
+                      				$('#users_edit_menu_div').slimScroll({
+                      					height: (totalTbleoutrHgt),
+                      					alwaysVisible: true
+                      				});
+                      			}else{
+                      				console.log(addUsrFrmHgt + 'hytrwer' + totalTbleoutrHgt);
+                      				if(custScrollHeight < totalTbleoutrHgt){
+                      					console.log(custScrollHeight +' rajdhani '+ totalTbleoutrHgt);
+                      					$('#users_edit_menu_div').slimScroll({
+                      						height: (totalTbleoutrHgt),
+                      						alwaysVisible: true
+                      					});
+                      				}else{
+                      					console.log(custScrollHeight +' express '+ totalTbleoutrHgt);
+                      					$('#users_edit_menu_div').slimScroll({
+                      						height: (custScrollHeight),
+                      						alwaysVisible: true
+                      					});
+                      				}
+                      			}
+
+                      		}else{
+                      			$('#users_edit_menu_div').slimScroll({
+                      				height: custScrollHeight,
+                      				alwaysVisible: true
+                      			});
+                      		}
+
+                      	}else if( addUsrFrmHgt < totalTbleoutrHgt){
+                      		console.log(addUsrFrmHgt +' gtryeuier '+ totalTbleoutrHgt);
+                      		var tabGlobalHeight = $('#myid_user_details').outerHeight();
+                      		$('#myid_user_new_menu_div').slimScroll({
+                      			height: (totalTbleoutrHgt),
+
+                      			alwaysVisible: true
+                      		});
+                      	}
+                      }else{
+                      	$('#users_edit_menu_div').slimScroll({
+                      		height: '250px',
+
+                      		alwaysVisible: true
+                      	});
+                      }
+                    },1000);
+});
+
+}
+
+
+
+function close_midblock()
+{
+
+	if($("#midblock > div").length>2)
+	{
+		$('#midblock > div').last().remove();
+	}
+	else if($("#midblock > div").length==2)
+	{
+		$('#midblock > div').last().remove();
+		$('#box').animate({'top':'-1900px'},500,function(){
+			$('#overlay').fadeOut('fast');
+		});
+	}
+	else
+	{
+		$('#box').animate({'top':'-1900px'},500,function(){
+			$('#overlay').fadeOut('fast');
+		});
+	}
+}
+
+function refresh_with_per_page(select_obj,url,refresh_div,page_param_name)
+{
+
+	var per_page = select_obj.options[select_obj.selectedIndex].value;
+	$.post("/users/per_page_modify", "per_page="+per_page+"&authenticity_token="+encodeURIComponent('Hnvc/lo5kbTc8qLQGqY6dvOO/8pVAA9w8xfkUFNqWHvqPUkMKmS0eWXHjqu/fcawFL3HqWO6iWClmzVoF0yLzg=='),function(data1) {
+		additional_params = ""
+		if (url.indexOf("?") != -1)
+		{
+			additional_params = url.split("?")[1]
+		}
+
+		$.post(""+url, additional_params + "per_page="+per_page+"&"+page_param_name+"=1&authenticity_token="+encodeURIComponent('NRhO+Ah+J1D89Eh3/qMdQPFRWW+8OVMxov7PzCvKTiXBXtsKeCMCnUXBZAxbeOGGFmJhDIqD1SH0ch70b+ydkA=='),function(data) {
+			assign_html_and_call_change_rtl(refresh_div,data);
+
+		});
+
+	});
+}
+
+function build_accordion(id,area_to_occupy)
+{
+
+	$('#'+id+' ul').hide();
+	$('.box .midbg .white_block .midblock ul.menu').prop("class",$('.box .midbg .white_block .midblock ul.menu').prop("class")+" theme_color");
+	$('.box .midbg .white_block .midblock ul.menu li a').prop("class",$('.box .midbg .white_block .midblock ul.menu li a').prop("class")+ " theme_color");
+	$('.box .midbg .white_block .midblock ul.menu li').each(function(){
+
+		link=$(this).children('ul')
+		if($(this).children('ul').length > 0 && $(this).children('a').first().html().indexOf('<font style="font-weight:bold;color:#000;float:right;margin-top:-35px;margin-right:5px;font-size:8px">v</font>') <= -1)
+		{
+			$(this).children('a').first().html($(this).children('a').first().html()+'<font style="font-weight:bold;color:#000;float:right;margin-top:-35px;margin-right:5px;font-size:8px">v</font>')
+		}
+	})
+	// $('#'+id+' li a').mouseover(
+		// function() {
+//
+//
+//
+			// var mySiblings = $(this).parent().siblings().find('ul');
+			// var openMe = $(this).next();
+//
+			// if (openMe!=null&&openMe.is(':visible')) {
+				// // openMe.slideUp('slow');
+//
+			// } else {
+//
+				// mySiblings.slideUp('normal');
+				// openMe.slideDown('slow');
+//
+			// }
+//
+	      // });
+
+	      $('#'+id+' li a').click(
+	      	function()   {
+
+
+	      		$(this).addClass("selected").addClass("selected_color");
+	      		$(this).parent().siblings().find('.selected').removeClass('selected').removeClass("selected_color").css("background-color", "");
+	      		var openMe = $(this).next();
+
+	      		var mySiblings = $(this).parent().siblings().find('ul');
+
+	      		mySiblings.slideUp('normal');
+	      		if (openMe.is(':visible')) {
+				// openMe.slideUp('slow');
+
+			} else {
+				mySiblings.slideUp('normal');
+				openMe.slideDown('slow');
+
+			}
+			link=$(this).attr('link');
+			link_class=$(this).attr('link_class');
+			if((link!=undefined&&link!=null&&link!="")||(link_class!=undefined&&link_class!=null&&link_class!=""))
+			{
+
+				obj_array=$('#'+id+' li a')
+				for (var i=0; i < obj_array.length; i++) {
+
+					if(obj_array[i].getAttribute("link")!=undefined&&obj_array[i].getAttribute("link")!=null&&obj_array[i].getAttribute("link")!="")
+					{
+						$('#'+obj_array[i].getAttribute("link")).hide();
+					}
+					else
+					{
+
+						$('.'+obj_array[i].getAttribute("link_class")).hide();
+					}
+
+				}
+
+				// $('#' + area_to_occupy).show("slide", {
+						// direction : "left"
+					// }, 500);
+					if(link!=undefined&&link!=null&link!="")
+						$('#'+link).show();
+					else
+						$('.'+link_class).show();
+
+
+				}
+				else{
+					var childUL = $(this).parent().find('ul');
+					if(childUL!=undefined){
+						var childLIA = $(childUL).find('a').first();
+						if(childLIA!=undefined && ((childLIA.attr("link")!=undefined&&childLIA.attr("link")!=null&&childLIA.attr("link")!=""&&childLIA.attr("link")!="auto_attendant_details")||(childLIA.attr("link_class")!=undefined&&childLIA.attr("link_class")!=null&&childLIA.attr("link_class")!=""))){
+							$(childLIA).click();
+						}
+					}
+				}
+
+			});
+
+	      $("#"+id+" li a").first().click();
+
+	    }
+	    function build_tabs(id,area_to_occupy)
+	    {
+
+	    	$('#'+id+' ul').hide();
+
+
+	    	$('#'+id+' li a').click(
+	    		function()   {
+
+			// console.log($(this).parent().siblings())
+			// console.log($(this).parent().siblings('.selected'))
+			$(this).parent().addClass("selected").addClass("selected_color");
+			$(this).parent().siblings('.selected').removeClass('selected').removeClass('selected_color').css("background-color", "");
+			var openMe = $(this).next();
+
+			var mySiblings = $(this).parent().siblings().find('ul');
+
+			mySiblings.slideUp('normal');
+			if (openMe.is(':visible')) {
+				// openMe.slideUp('slow');
+
+			} else {
+				mySiblings.slideUp('normal');
+				openMe.slideDown('slow');
+
+			}
+			link=$(this).attr('link');
+			link_class=$(this).attr('link_class');
+			if((link!=undefined&&link!=null&&link!="")||(link_class!=undefined&&link_class!=null&&link_class!=""))
+			{
+
+				obj_array=$('#'+id+' li a')
+				for (var i=0; i < obj_array.length; i++) {
+
+					if(obj_array[i].getAttribute("link")!=undefined&&obj_array[i].getAttribute("link")!=null&&obj_array[i].getAttribute("link")!="")
+					{
+						$('#'+obj_array[i].getAttribute("link")).hide();
+					}
+					else
+					{
+
+						$('.'+obj_array[i].getAttribute("link_class")).hide();
+					}
+
+				}
+
+				// $('#' + area_to_occupy).show("slide", {
+						// direction : "left"
+					// }, 500);
+					if(link!=undefined&&link!=null&link!="")
+						$('#'+link).show();
+					else
+						$('.'+link_class).show();
+
+
+				}
+
+			});
+
+	    	$("#"+id+" li a").first().click();
+
+	    }
+
+
+	    var t ;
+	    reset_all();
+
+	    function session_expiry_handling_in_render_js()
+	    {
+	    	$('#upload_media_res').html("Your Session has expired. Please login again");
+	    	$('#upload_media_content').hide();
+	    	setTimeout('document.location.href=\"\"+\"/login/index?modifystatus=Session Expired\"',"2000");
+	    }
+
+	    function show_locale_overlay()
+	    {
+	    	$('#locale_box1').animate({'top':'250px'},500,function(){
+	    		$('#locale_overlay1').fadeIn('fast');
+	    	});
+	    }
+	    $('.locale_cancel').click(function(){
+	    	$('#locale_box1').animate({'top':'-1800px'},500,function(){
+	    		$('#locale_overlay1').fadeOut('fast');
+	    	});
+	    });
+	    var media_box="";
+	    function upload_media_submit(media_box_nm){
+	    	if(media_box_nm==undefined || media_box_nm==null || media_box_nm=="" || media_box_nm==" ")
+	    	{
+	    		media_box_name=""
+	    	}
+	    	else
+	    	{
+	    		media_box_name="#"+media_box_nm
+	    	}
+
+	    	if(($(media_box_name+'#description').val() ==  null || $(media_box_name+'#description').val() == '')&&($(media_box_name+'#spoken_name_media_id').is(':disabled')==true||$(media_box_name+'#spoken_name_media_id').is(':disabled')=='true'))
+	    	{
+	    		jAlert ('Name Cannot Be Empty',"Alert","Ok");
+	    	}
+	    	else if($(media_box_name+' #fileDataMedia').prop("value")=="" && $("#recording_div").css("display") == "block")
+	    	{
+	    		jAlert ('Please attach the recording',"Alert","Ok");
+	    	}
+	    	else
+	    	{
+	    		$(media_box_name+'#media_type').prop("value",$(media_box_name+'#media_type_displayed').prop("value"));
+	    		$(media_box_name+'#upload_media_content').css('display','none');
+	    		$(media_box_name+'.upload_media_submit').css('display','none');
+	    		$(media_box_name+'#upload_media_res').html($('#loaderimg').html());
+
+    	  	// if(document.getElementById('media_edit_id').value ==  null || document.getElementById('media_edit_id').value == '')
+             // {
+             	$(media_box_name+'#media_form').submit();
+ 		     // console.log("done");
+ 		      // }
+ 		   // else
+ 		      // document.getElementById('greetings_edit_media_form').submit();
+ 		    }
+
+ 		  }
+
+ 		  function check()
+ 		  {
+
+ 		  	try{
+ 		  		win.close();
+ 		  	}
+ 		  	catch(e){
+					 //catch and just suppress error
+					}
+					win=window.open($(this).href,'_newtab');
+				}
+
+				function refreshPage(response,page,midblock,method_name)
+				{
+
+					if(($('#'+response).css( "color") == "rgb(0, 128, 0)")||($('#'+response).css( "color") == "rgb(220, 20, 60)") || $('#'+response).css( "color") == "green" || $('#'+response).css( "color") == "crimson")
+					{
+						if (method_name==undefined||method_name==null||method_name==''||method_name=='nil')
+							method_name="partbody"
+						if (page=='greetings'){
+							aa_flag_val = "";
+							aa_flag_val = $('#aa_flag').val();
+							if(aa_flag_val =='1')
+								method_name = method_name+'?aa_flag='+aa_flag_val;
+						}
+
+						url="/"+page+"/"+method_name
+						$('#'+midblock).html($('#loaderimg').html());
+						var fillstr = url.split("?");
+						var fillurl = fillstr[0];
+						var fillparam = "authenticity_token="+encodeURIComponent('F1RlicQv++gh5ur8fAXl5bmpyaZ8BbBX76Rk25ifOf3jEvB7tHLeJZjTxofZ3hkjXprxxUq/Nke5KLXj3LnqSA==')+"&";
+						if(fillstr.length>1)
+							fillparam = fillparam + fillstr[1];
+						$.post(fillurl,fillparam, function(data) {
+							assign_html_and_call_change_rtl(midblock,data);
+
+						});
+					}
+				}
+
+//  new addition for users show on click of my profile
+function addClickHandlers1(id){
+	$('.dummy').hide();
+	if($("#auto_attendant_new_box")!=null)
+		$("#auto_attendant_new_box").hide();
+
+
+	var is_subportal = false ;
+
+	if (id == "myid_profile" || is_subportal == true)
+	{
+		fill_midblock("/subuser/edit?myid_profile=myid_profile");
+	}
+	else
+	{
+		fill_midblock("/subuser/edit");
+	}
+
+}
+
+
+
+
+//ftype declaration
+//min_val/max_val for min/max value restriction
+function validation(id) {
+var objid=document.getElementById(id);
+value = document.getElementById(id).value;
+objid.style.borderColor="";
+if(value!=""){
+	valuej = value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	if(valuej.length > 32){
+		valuej = valuej.substring(0, 32) + "..."
+	}
+	if(objid.getAttribute('ftype')!=undefined){
+		if(objid.getAttribute('ftype') == 0) { //0 for email
+			var reg = /^[a-zA-z0-9\!\#\$\%\&\'\*\+\/=\?\^\_\`\{\}\~\-\;]+(\.[a-zA-Z0-9\!\#\$\%\&\'\*\+\/=\?\^\_\`\{\}\~\-\;]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.([a-zA-Z]{2,})$/i;
+			if(reg.test(value) == false) {
+				jAlert("<p class=\"textellipsis nomargin\">'"+valuej+"'</p>"+"<p class=\"nomargin\"> is an invalid email address.</p>","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		} else if(objid.getAttribute('ftype') == 1) { //1 for ip
+			if(objid.getAttribute('accepted')!=undefined)
+				var pattern = new RegExp("^((((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|localhost)(\\("+objid.getAttribute('accepted')+")(((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))|localhost))*)*$");
+			else
+				var pattern = /^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])|localhost)$/g;
+			var bValidIP = pattern.test(value);
+			if(bValidIP == false) {
+				jAlert("'"+valuej+"'"+" is an Invalid IP Address. Please Enter a Valid IP Address.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 2) { //2 for numeric
+			if(objid.getAttribute('accepted')!=undefined)
+				var reg = new RegExp("^[("+objid.getAttribute('accepted')+")\\d]*$");
+			else
+				var reg = new RegExp("^[\\d]*$");
+			if(!value.match(reg)) {
+				jAlert("'"+valuej+"'"+" is not a numeric value. Please enter a numeric value.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 3) { //3 for domain
+			var reg = /^\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+			if(reg.test(value) == false) {
+				jAlert("'"+valuej+"'"+" is an Invalid Domain. Please Enter a Valid Domain.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		} else if(objid.getAttribute('ftype') == 4) { //4 for mac address
+			var RegExPattern = /^[0-9a-fA-F:]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+" is an Invalid MAC Address. Please Enter a Valid MAC Address.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 5) { //5 for Billing name
+			var RegExPattern = /^[a-zA-Z][a-zñáéíóúüA-Z0-9 _]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should start with alpha character. No special characters allowed except underscore(_) and space( ).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 6) { //6 for incase of notifications type
+			var RegExPattern = /^[^0-9\$&\*\(\)-_\+=\[\]\{\}\|\\,\.\?\s]/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should start with alpha character.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 7) { //7 for theme name(service Portal)
+			var RegExPattern = /^[0-9a-z.]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid . Should contain alpha numeric characters and &#39;.&#39; only. All letters should be in lower case.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 8) { //8 for Zipcode
+			var reg;
+			if(objid.getAttribute('accepted')!=undefined)
+				reg = new RegExp("^[0-9a-zA-Z "+objid.getAttribute('accepted')+"]*$");
+			else
+				reg = /^[0-9a-zA-Z ]+$/;
+			if(!value.match(reg)) {
+				jAlert("'"+valuej+"'"+" is invalid . Should contain alpha numeric characters . No special characters allowed.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 10) { //10 for AA list
+			var RegExPattern = /^[a-zA-Z][a-zA-Z0-9 _]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should start with alpha character. No special characters allowed except underscore(_).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 11) { //11 for email or text
+			var RegExPattern = /^[\w@.,_ +-]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should contain alpha numberic characters or email address. No special characters allowed except @.,_.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 13) { //13 for FQDN
+			var reg = /\.([A-Za-z]{2,4})$/;
+			if(reg.test(value) == false) {
+				jAlert("'"+valuej+"'"+" is an Invalid FQDN. Please Enter a Valid FQDN.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 15){ //15 for Email or number
+			//check for valid number or email address
+			var email_reg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			var num_reg = new RegExp("^[\\d]*$");
+			if(num_reg.test(value) == false && email_reg.test(value) == false){
+				jAlert("'"+valuej+"'"+" is not a Numeric Value or Email-id. Please Enter a valid Numeric Value or Email-id.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 16) { //16 for organization names
+			var RegExPattern = /^[a-zA-Z][a-zA-Z0-9_. -?]+$/;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should start with alpha character. No special characters allowed except underscore(_), space( ), question mark (?) and hyphen (-).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 17) { //17 for street addres
+			var RegExPattern = /^[a-zA-Z0-9 \-#][a-zA-Z0-9 \-#]+$/;
+			if(!value.match(RegExPattern)) {
+				jAlert("'"+valuej+"'"+"  is invalid. Can start with alpha character or pound(#). No special characters allowed except pound(#), space( ) and hyphen (-).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 20) { //20 for phone number
+			if(objid.getAttribute('accepted')!=undefined)
+				var reg = new RegExp("^[\\d"+objid.getAttribute('accepted')+"]{8,17}$");
+			else
+				var reg = new RegExp("^[\\d]{8,17}$");
+			if(!value.match(reg)) {
+				jAlert("'"+valuej+"'"+" is invalid. Please enter a valid phone / fax number.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 21) { //21 fo rnot gt(>) & lt(<)
+			if(objid.getAttribute('accepted')!=undefined)
+				var reg = new RegExp("^(?!<|!>"+objid.getAttribute('accepted')+").*$");
+			else
+				var reg = /^(?!<|!>).*$/;
+			if(reg.test(value) == false) {
+				jAlert("Please enter alphanumerics. All special characters allowed except  less than(&lt;) and greater than(&gt;).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 25) { //25 for URL
+			var web_regex = /^(?:(?:(https|http|www):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+			var web_regex_1 = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/g;
+			var ip_regesx =/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/;
+			if(web_regex.test(value) == false && web_regex_1.test(value) == false && ip_regesx.test(value) == false) {
+				jAlert("'"+valuej+"'"+"Please enter a valid web URL in the web support field.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 28) { //28 for email addresses with comma separated
+			var RegExPattern = /^(,?[a-z0-9 !#$%&'*+\/=?^_`{}~-]+(?:\.[a-z0-9 !#$%&'*+\/=?^_`{}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i;
+			if(RegExPattern.test(value) == false) {
+				jAlert("'"+valuej+"'"+"  is invalid. Should contain email addresses separated by a comma(,) followed by another email address without space( ) after comma(,).","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}else if(objid.getAttribute('ftype') == 30) { //30 CIDN
+			var reg = new RegExp("^[a-zA-Z0-9]{0,10}$");
+			if(!value.match(reg)) {
+				jAlert("Please enter a valid CIDN number.","Alert","Ok");
+				handle_text_boxes(objid);
+				return false;
+			}
+		}
+	}
+	if(objid.getAttribute('min')!=undefined){
+		if(parseInt(value.length)<parseInt(objid.getAttribute('min'))){
+			jAlert("'"+valuej+"'"+" is Invalid. Length should not be less than "+objid.getAttribute('min'),"Alert","Ok");
+			handle_text_boxes(objid);
+			return false;
+		}
+	}
+	if(objid.getAttribute('max')!=undefined){
+		if(parseInt(value.length)>parseInt(objid.getAttribute('max'))){
+			jAlert("'"+value+"'"+" is Invalid. Length should not be more than "+objid.getAttribute('max'),"Alert","Ok");
+			handle_text_boxes(objid);
+			return false;
+		}
+	}
+	if(objid.getAttribute('min_val')!=undefined){
+		if(parseFloat(value)<parseFloat(objid.getAttribute('min_val'))){
+			jAlert("'"+valuej+"'"+" is Invalid. Value should not be less than "+objid.getAttribute('min_val'),"Alert","Ok");
+			handle_text_boxes(objid);
+			return false;
+		}
+	}
+	if(objid.getAttribute('max_val')!=undefined){
+		if(parseFloat(value)>parseFloat(objid.getAttribute('max_val'))){
+			jAlert("'"+valuej+"'"+" is Invalid. Value should not be more than "+objid.getAttribute('max_val'),"Alert","Ok");
+			handle_text_boxes(objid);
+			return false;
+		}
+	}
+}
+}
+
+       function handle_text_boxes(objid)
+       {
+       	objid.style.borderColor="red";
+       	objid.value="";
+       }
+       function delClickHandlers(response,url,midblock,page,controller,name,method_name,search_form,postform,config_alert,userid){
+
+       	if(config_alert!=null&&config_alert!=''&&config_alert!=undefined&&config_alert!='nil')
+       	{
+
+       		if(config_alert=="Inbox" || config_alert=="INBOX" || config_alert=="inbox" || config_alert=="sent" || config_alert=="Sent")
+       		{
+       			if($('#tab_list_table #trash').attr('link')=='/messages/trash')
+       				message="Are you sure to trash the selected item/s?"
+       			else
+       				message="Are you sure to delete the selected item/s?"
+       		}
+       		else {
+       			if (name =="del_from_trash"){
+       				message="This message(s) will be PERMANENTLY Deleted. Do you want to continue?"
+       				$('#'+postform).attr("action","delete_multiple_trash")
+       				name = null
+       			}
+       			else
+       				message="Are you sure to restore the selected item/s?"
+       		}
+       	}
+       	else
+       	{
+       		message="Are you sure to delete the selected item/s?"
+       	}
+       	c_msg=message+" \n"
+       	jConfirm(c_msg,'Confirm'
+       		,function(r){
+
+       			if(r==true)
+       			{
+       				if(url!=null)
+       				{
+       					var delstr = (url).split("?");
+       					var delurl = delstr[0];
+       					var delparam = "authenticity_token="+encodeURIComponent('05oavRxnced9draB4NzviZHy2nKllrgi3ecreZ2e4Ign3I9PbDpUKsRDmvpFBxNPdsHiEZMsPjKLa/pB2bgzPQ==')+"&";
+       					if(delstr.length>1){
+       						delparam = delparam + delstr[1];
+       					}
+       					$.post(delurl,delparam,function(data) {
+       						process_del(data,response,midblock,page,controller,name,method_name,search_form,postform)
+       					});
+       				}
+       				else
+       				{
+       					if(postform!=null)
+       					{
+       						$.post($('#'+postform).attr("action"),$('#'+postform).serialize(),function(data){
+       							process_del(data,response,midblock,page,controller,name,method_name,search_form,postform)
+       						});
+       					}
+       				}
+       			}
+       			return false;
+       		});
+       }
+       function delClickList(response,url,midblock,page,controller,name,method_name,search_form,postform,config_alert,checkbox_id)
+       {
+       	if(method_name == 'inbox' || method_name == 'INBOX'){
+       		method_name = 'partbody?folder=INBOX';
+       	}else if(method_name == 'sent' || method_name == 'Sent'){
+       		method_name = 'partbody?folder=Sent';
+       	}else{
+       		method_name = method_name;
+       	}
+
+       	if ($("input:checkbox[id="+checkbox_id+"]:checked").length == 0 )
+       	{
+       		$('#'+response).css('color','red');
+       		$('#'+response).text("At least one entry must be selected");
+       	}
+       	else
+       	{
+       		delClickHandlers(response,url,midblock,page,controller,name,method_name,search_form,postform,config_alert);
+       	}
+       }
+
+       $('#sub_login').click(function() {
+       	try{
+       		win.close();
+       	}
+       	catch(e){
+					 //catch and just suppress error
+					}
+					win=window.open("/subscriber/login",'_newsubscriber');
+				});
+
+
+
+       function expand_collapse(id,class_name,collapsible_div) {
+       	var slide=$('#'+id).attr('slide_attr');
+       	if(slide=="0")
+       		{ $('#'+collapsible_div).slideDown('slow');
+       	$('.'+class_name).css('background-position','0px 0px');
+       	$('#'+id).attr('slide_attr','1');
+       }
+       else
+       	{ $('#'+collapsible_div).slideUp('slow');
+       $('.'+class_name).css('background-position','-21px 0px');
+       $('#'+id).attr('slide_attr','0');
+     }
+
+   }
+
+
+
+
+   function edit_user_boxclose1(){
+
+   	$('.users_edit_submit1').css( "display", "inline" ) ;
+   	$('.email_acct_add_boxclose_profile').unbind("click");
+   	$('.email_acct_edit_boxclose_profile').unbind("click");
+   	$('.email_contact_lists_boxclose_profile').unbind("click");
+   	$('.email_acct_add_submit_profile').unbind("click");
+   	$('.email_acct_edit_submit_profile').unbind("click");
+   	close_midblock();
+   }
+
+
+
+             // function delcheck(id,array,response){
+                 	// if ($("input:checkbox[id="+array+"]:checked").length == 0 )
+                  // {
+                  	// $('#'+response).css('color','red');
+			 		// $('#'+response).text("At least one entry must be selected");
+                  // }
+                 	 // else
+                  // {
+               // jConfirm(" Are you sure to delete the selected item/s?\n",'Confirm'
+						// ,function(r){
+				 // if(r==true)
+		             // {
+				      // document.getElementById(id).submit();
+				      // }
+				   // });
+				      // }
+	      // return false;
+	      // }
+
+
+
+	      grt_menu=true;
+
+         // function media_configure(proceed,mandatory)
+         function media_configure(proceed,form_name,box,mediatype)
+         {
+			//
+			if(box!=undefined&&box!=null&&box!="")
+				var media_box_name="#"+box+"_media_box ";
+			else
+				var media_box_name=""
+
+			var user_id=""
+			var host=""
+
+			//getting user_id and host from form using form_name
+			if($("#"+form_name+" #userid") != null)
+			{
+				user_id=$("#"+form_name+" #userid").val();
+				host=$("#"+form_name+" #host").val();
+			}
+		 	//getting media type from form using form_name
+		 	if($("#"+form_name+" #mediatype") != null && mediatype == undefined )
+		 		mediatype=$("#"+form_name+" #mediatype").val();
+
+ 	 		// setting undefined variable to empty string ''
+ 	 		if(user_id==undefined)
+ 	 			user_id=""
+ 	 		if(host==undefined)
+ 	 			host=""
+ 	 		if(mediatype==undefined)
+ 	 			mediatype=""
+ 	 		aa_flag_val = "";
+ 	 		aa_flag_val = $('#aa_flag').val();
+
+ 	 		$('#upload_media_midblock').html($('#loaderimg').html());
+ 	 		window.scrollTo(0,0);
+ 	 		if(box==undefined||box==null||box=="")
+ 	 		{
+ 	 			if(aa_flag_val =='1')
+ 	 				form_name = form_name+'&aa_flag='+aa_flag_val;
+ 	 			fill_midblock("/media/new_media?userid="+user_id+"&host="+host+"&mediatype="+mediatype+"&proceed="+proceed+"&form_name="+form_name)
+ 	 		}
+ 	 		else
+ 	 		{
+ 	 			var loaderimg="loaderimg_"+box;
+ 	 			var box_name=box+"_media_box"
+ 	 			$('#'+loaderimg).show();
+ 	 			grt_id = "";
+ 	 			media_edit_id = "";
+ 	 			id_media = "";
+ 	 			if($("#"+form_name+" #media_edit_id") != null) {
+ 	 				media_edit_id_val = $("#"+form_name+" #media_edit_id").val();
+ 	 				if(media_edit_id_val !="")
+ 	 					media_edit_id = "&media_edit_id=" + media_edit_id_val;
+ 	 			}
+ 	 			if($("#"+form_name+" #id_media") != null)
+ 	 			{
+ 	 				id_media_val = $("#"+form_name+" #id_media").val();
+ 	 				if(id_media_val !="")
+ 	 					id_media = "&id_media=" + id_media_val;
+ 	 			}
+
+ 	 			if($('#aa_flag').val()=="1")
+ 	 			{
+ 	 				aaflag="&aa_flag=1"
+ 	 			}
+ 	 			else
+ 	 			{
+ 	 				aaflag=""
+ 	 				if($("#"+form_name+" #grt_type") != null)
+ 	 				{
+ 	 					grt_type_val = $("#"+form_name+" #grt_type").val();
+ 	 					if(grt_type_val == "schedule")
+ 	 						grt_id = "&grt_id="+$("#"+form_name+" #greetings_grtid").val();
+ 	 				}
+ 	 			}
+ 	 			$.post("/media/new_media","authenticity_token="+encodeURIComponent('gWulZaLMqKuV8W590Mkw0fyZQSirmZtQO+90nuaNTL91LTCX0pGNZizEQgZ1EswXG6p5S50jHUBtY6WmoqufCg==')+"&userid="+user_id+"&host="+host+"&mediatype="+mediatype+"&proceed="+proceed+"&form_name="+form_name+"&box_name="+box_name+aaflag+grt_id+media_edit_id+id_media,function(data){
+
+ 	 				$('#'+box_name).html(data);
+ 	 				$('#'+loaderimg).hide();
+ 	 				$('#'+box_name).slideDown('fast');
+ 	 			});
+ 	 		}
+ 	 	}
+     // function fax_media_configure(proceed,form_name,box)
+     // {
+     	// alert("hello");
+     	// media_configure(proceed,form_name,box)
+     // }
+
+     function toggle_configure_modify(form_name)
+     {
+     	if(form_name==''||form_name==null||form_name==undefined)
+     		{	    form_name=''
+     	if(document.getElementById('form_name')!=''&&document.getElementById('form_name')!=null&&document.getElementById('form_name').value!=''&&document.getElementById('form_name').value!=null)
+     	{
+     		form_name='#'+document.getElementById('form_name').value}
+
+     	}
+     	else
+     		form_name='#'+form_name
+
+     	string_mediaid=form_name+' #mediaid'
+     	string_config=form_name+' #configure_link'
+
+     	if($(string_mediaid).val()==null||$(string_mediaid).val()==''||$(string_mediaid).val()==undefined)
+     		$(string_config).html("Configure")
+     	else
+     		$(string_config).html("Modify")
+     }
+     $.alerts.okButton="Yes"
+     $.alerts.cancelButton="No"
+
+
+     function expand_n_collapse(id1)
+     {
+     	slide_attr1=$('#'+id1).attr('slide_attr');
+     	slide_div1=$('#'+id1).attr('slide_div');
+     	collapse_all();
+     	collapse_all_inside();
+     	if(slide_attr1=='0')
+     	{
+     		$('#'+slide_div1).slideDown('fast');
+     		$('#'+id1).css('background-position','0px 0px');
+     		$('#'+id1).attr('slide_attr','1');
+     	}
+     }
+
+     function collapse_all()
+     {
+     	obj_arr=$('.expand_collapse');
+     	for (var i=0; i < obj_arr.length; i++) {
+     		id=obj_arr[i].id;
+     		slide_attr=$('#'+id).attr('slide_attr');
+     		slide_div=$('#'+id).attr('slide_div');
+     		if(slide_attr=='1')
+     		{
+     			$('#'+slide_div).slideUp('fast');
+     			$('#'+id).css('background-position','-21px 0px');
+     			$('#'+id).attr('slide_attr','0');
+     		}
+     	};
+     }
+     function expand_n_collapse_inside(id1)
+     {
+     	slide_attr1=$('#'+id1).attr('slide_attr');
+     	slide_div1=$('#'+id1).attr('slide_div');
+     	collapse_all_inside();
+
+     	if(slide_attr1=='0')
+     	{
+     		$('#'+slide_div1).slideDown('fast');
+     		$('#'+id1).css('background-position','0px 0px');
+     		$('#'+id1).attr('slide_attr','1');
+     	}
+     }
+
+     function collapse_all_inside()
+     {
+     	obj_arr=$('.expand_collapse_inside');
+     	for (var i=0; i < obj_arr.length; i++) {
+     		id=obj_arr[i].id;
+     		slide_attr=$('#'+id).attr('slide_attr');
+     		slide_div=$('#'+id).attr('slide_div');
+     		if(slide_attr=='1')
+     		{
+     			$('#'+slide_div).slideUp('fast');
+     			$('#'+id).css('background-position','-21px 0px');
+     			$('#'+id).attr('slide_attr','0');
+     		}
+     	};
+     }
+
+     function CreateCall(id,to)
+     {
+     	call_info_div=$('#call_info_div');
+     	call_id=call_info_div.attr("call_id")
+     	if(call_id==null||call_id==""){
+     		if(to==null|| to==""|| to==undefined)
+     			to=document.getElementById(id).innerHTML
+     		$.post("/contacts/create_call","authenticity_token="+encodeURIComponent('m1PV8xqtraKrV0A9YCAVm40EKwfgH7ju0qGD6tE98axvFUABavCIbxJibEbF++ldajcTZNalPv6ELVLSlRsiGQ==')+"&to="+to,function(data) {
+
+
+     			if(!(data.indexOf("Your session has expired. Please login again",0)>-1))
+     			{
+     				assign_html_and_call_change_rtl('click_to_call_placeholder',data);
+     				call_info_div=$('#call_info_div');
+     				call_id=call_info_div.attr("call_id");
+     				call_duration=call_info_div.attr("call_duration");
+     				status_msg=call_info_div.attr("call_status_msg");
+     				if(call_id!=null&&call_id!="")
+     				{
+     					$('#call_info_div').show();
+     					t = setInterval(function(){checkStatus()}, 5000);
+     					Init(call_duration);
+     				}
+     				else
+     				{
+     					reset_all();
+     					$('#call_info_div').hide();
+     					$('#call_error').css("color", 'red');
+     					$('#call_error').html(status_msg);
+
+     				}
+     			}
+     			else{
+
+     				assign_html_and_call_change_rtl('click_to_call_error',data);
+
+     			}
+     		});
+
+     	}else
+     	{
+     		$('#call_error').css("color", 'red');
+     		$('#call_error').html("Call In Progress...");
+     	}
+     }
+
+
+     function CreateCall_messages(id){
+     	if (document.getElementById(id).getAttribute('callbacknum') != null && document.getElementById(id).getAttribute('callbacknum') != "")
+     	{
+     		jConfirm("Proceed to call the call back number : "+document.getElementById(id).getAttribute('callbacknum') ,'Confirm'
+     			,function(r){
+     				if(r==true)
+     				{
+     					CreateCall(id,document.getElementById(id).getAttribute('callbacknum'));
+     				}
+     			});
+     	}
+     	else  if (document.getElementById(id).getAttribute('to') != null && document.getElementById(id).getAttribute('to') != "")
+     	{
+     		CreateCall(id,document.getElementById(id).getAttribute('to'));
+     	}
+     	else
+     		CreateCall(id);
+     }
+
+
+
+     function DropCall(logout){
+
+     	call_info_div=$('#call_info_div');
+     	call_id=call_info_div.attr("call_id");
+     	$.get("/contacts/drop_call",function(data) {
+     		assign_html_and_call_change_rtl('click_to_call_placeholder',data);
+     		if(!(data.indexOf("Your session has expired. Please login again",0)>-1))
+
+     		{
+
+     			call_info_div=$('#call_info_div');
+     			status=call_info_div.attr("call_status");
+     			status_msg=call_info_div.attr("call_status_msg");
+     			if(status==null ||status=="" )
+     			{
+
+     				reset_all();
+     				$('#call_info_div').hide();
+     				if(logout)
+     					$.post("/login/logout","authenticity_token="+encodeURIComponent('Vgaus86lMamsobeK7DVp8Gs9tuccdxDlaGwyTwEFYDKiQDtBvvgUZBWUm/FJ7pU2jA6OhCrNlvU+4ON3RSOzhw=='), function (data) {
+     						document.location.href="/login/index"
+     					});
+     			}
+     			else
+     			{
+     				$('#call_error').css("color", 'red');
+     				$('#call_error').html(status_msg);
+     			}
+     		}
+     	});
+
+     }
+     function checkStatus()
+     { call_info_div=$('#call_info_div');
+     call_id=call_info_div.attr("call_id");
+     $.get("/contacts/check_call",function(data) {
+     	assign_html_and_call_change_rtl('click_to_call_placeholder',data);
+     	call_info_div=$('#call_info_div');
+     	status=call_info_div.attr("call_status");
+     	status_msg=call_info_div.attr("call_status_msg");
+
+     	if(status.trim()!="Alive")
+     	{
+
+     		reset_all();
+     		$('#call_info_div').hide();
+
+     	}
+     	else
+     	{
+     		$('#call_info_div').show();
+     	}
+
+
+     })
+   }
+   function reset_all()
+   {   $('#call_error').html("");
+   $('#call_duration_div').html("");
+   StopTimer();
+   t=clearInterval(t);
+
+
+ }
+
+ var mins,secs,TimerRunning,TimerID;
+ TimerRunning=false;
+
+ function Init(totalSec) //call the Init function when u need to start the timer
+ {
+
+ 	hrs=(parseInt(totalSec / 3600 ) % 24);
+ 	mins=(parseInt(totalSec / 60 ) % 60);
+ 	secs=(totalSec % 60);
+ 	StartTimer();
+ }
+
+ function StopTimer()
+ {
+ 	if(TimerRunning)
+ 		clearTimeout(TimerID);
+ 	TimerRunning=false;
+
+
+ }
+
+ function StartTimer()
+ {
+ 	document.getElementById('call_duration_div').style.color='green';
+ 	TimerRunning=true;
+ 	TimerID=self.setTimeout(function(){StartTimer()},1000);
+ 	document.getElementById('call_duration_div').innerHTML="Duration "+Pad(hrs)+":"+Pad(mins)+":"+Pad(secs);
+
+ 	if(secs==60)
+ 	{
+ 		mins++;
+ 		secs=0;
+ 	}
+ 	if(mins==60)
+ 	{
+ 		hrs++;
+ 		mins=0;
+ 	}
+ 	secs++;
+
+ }
+
+
+
+ function Pad(number) //pads the mins/secs with a 0 if its less than 10
+ {
+ 	if(number<10)
+ 		number=0+""+number;
+ 	return number;
+ }
+ function logout_check_session_for_call()
+ {
+ 	// DropCall(true);
+ 	call_id=$('#call_info_div').attr("call_id");
+ 	if(call_id==null||call_id=="")
+ 	{
+ 		$.post("/login/logout","authenticity_token="+encodeURIComponent('JFCLqD3bV/HlPmIXer5MzQvft54bslaWNp/zrQpegLvQFh5aTYZyPFwLTmzfZbAL7OyP/S0I0IZgEyKVTnhTDg=='), function (data) {
+ 			document.location.href="/login/index"
+ 		});
+ 	}
+ 	else
+ 		{           $.alerts.okButton="Drop call and Logout";
+ 	$.alerts.cancelButton="Continue Call but Logout";
+ 	$.alerts.closeButton="Cancel";
+
+
+ 	jConfirm3("Call is in Progress...","Logout"
+ 		,function(confirm_logout){
+ 			if(confirm_logout==true)
+ 			{
+ 				DropCall(true);
+
+ 			}
+ 			else
+ 			{
+ 				if(confirm_logout==false)
+ 					document.location.href="/login/index"
+ 				else
+ 				{
+ 					$.alerts.okButton="Yes"
+ 					$.alerts.cancelButton="No"
+ 				}
+ 			}
+
+ 		});
+ }
+}
+function pad_number_to_2(obj)
+{
+	number=parseInt(obj.attr('text'));
+
+	number1= (number < 10 ? '0' : '') + number;
+
+	obj.prop('value',number1);
+	obj.attr('text',number1);
+}
+function do_changes_for_rtl(division_id)
+{
+			 // $('[title]').each(function()
+// {
+//
+    // parentGuest = $(this);
+//
+  // if ( parentGuest.hasClass("jstree-draggable") || parentGuest.parent().hasClass("jstree-draggable") || parentGuest.prop("id").indexOf("template_") != -1)
+  // {
+//
+//
+  // }
+  // else
+  // {
+//
+	  // if (parentGuest.is("span"))
+	  // {
+	  	// parentGuest.append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;'> i</sup>");
+	  // }
+	  // else
+	  // {
+		  	// if (parentGuest.hasClass("help_for_tab") || parentGuest.is("div") )
+		  	// {
+		  		// var spans = parentGuest.children();
+		  		// var add = true;
+		  		// if (spans.length > 0)
+		  		// {
+//
+		  		// spans.each(function() {
+		  				 // if (spans.is("sup") )
+						 // { add = false;}
+					// });
+					// }
+					// if (add)
+					// { parentGuest.append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;float:right;'> i</sup>");
+				    	// if (parentGuest.prop("id") == "idLogin")
+					      // {
+					      	// parentGuest.find("sup").css("float","none");}
+					// }
+		  	// }else
+		  	// {
+		  		 // if (parentGuest.children())
+    // {
+   // parentGuest.children().css("display","inline-block");
+  // }
+//
+		  			// var element1 = parentGuest.children();
+//
+		  		// if (element1.length > 0)
+		  		// {
+		  			// var add1 = true;
+		  		// element1.each(function() {
+		  				 // if (element1.is("sup") )
+						 // { add1 = false;}
+					// });
+					// }
+//
+						// if (add1){
+						 	// parentGuest.append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;'> i</sup>");
+						 // }
+		    // }
+	// }
+  // }  // This is your rel value
+// });
+//
+//
+//
+// // $('#menu_types li a').append("<span class='title_class' style='width: 4%;height: 21px;background: url(/images/icon_title.png) no-repeat scroll 0 top #EAF1F6;'> </span>");
+// $('.pushfordrag li a').append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;'>i</sup>");
+//
+// $('#sys_template_list li a').css("width","83%");
+// $('#org_template_list li a').css("width","83%");
+//
+// $('#sys_template_list li a').append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;'>i</sup>");
+// $('#org_template_list li a').append("<sup style='color:#FF6200;font-style: italic;font-weight: bolder;'>i</sup>");
+//
+// $('#sys_template_list li a').css("width","83%");
+// $('#org_template_list li a').css("width","83%");
+
+
+
+}
+
+function assign_html_and_call_change_rtl(division_id,data)
+{
+	$('#'+division_id).html(data);
+	do_changes_for_rtl(division_id);
+
+}
+
+function fromAS(value,is_frm_messages)
+{
+	if(is_frm_messages)
+		addRecording(value);
+	else
+		addRecordedFile(value);
+
+}
+
+function ResizeFlash(value,is_frm_messages)
+{
+	if(is_frm_messages)
+		ResizeFlashForCompose(value);
+	else
+		ResizeFlashForMedia(value);
+}
+
+function fill(link,id)
+{
+	$('.listitem').removeClass('selected').removeClass('selected_color').addClass('notselected').addClass('theme_color');
+	$('.listitem').css("font-weight","normal");
+
+	$('#'+id).addClass('selected').addClass('selected_color').removeClass('notselected').removeClass('theme_color');
+	$('#'+id).css("font-weight","bold");
+	$('.listitem').animate({
+		width: "100%"},0, $('#'+id).animate({
+			width: "110%"},500));
+
+
+	$('#tabarea').html("<p style='text-align:center;padding-top:150px;font-size: 22px;'>Loading<span class='ellipsis-animation'><span>.</span><span>.</span><span>.</span></span></p>");
+
+	window.scrollTo(0,0);
+	var fillstr = link.split("?");
+	var fillurl = fillstr[0];
+	var fillparam = "authenticity_token="+encodeURIComponent('mQLBdnvc4P61DTsoO0+b1QzjETQH4K+OvPcyX72cBRJtRFSEC4HFMww4F1OelGcT69ApVzFaKZ7qe+Nn+brWpw==')+"&";
+	if(fillstr.length>1)
+		fillparam = fillparam + fillstr[1];
+	$.post(""+fillurl,fillparam,function(data)
+	{
+
+		$('#tabarea').show("slide", { direction: "left" }, 500);
+		assign_html_and_call_change_rtl('tabarea',data);
+	});
+}
+function process_del(data,response,midblock,page,controller,name,method_name,search_form,postform)
+{
+
+
+	msg = data.split("=");
+
+	if(data.indexOf('Your session has expired. Please login again',0)>-1)
+		error=data
+	else
+		error=msg[1]
+	if(msg[0] != 0)
+
+	{
+		$('#'+response).css( "color", "red");
+		$('#'+response).html(error);
+
+	}
+	else
+	{
+		$('#'+response).css( "color", "green");
+		$('#'+response).css("display", "block");
+		if(search_form!=null&&search_form!=''&&search_form!=undefined&&search_form!='nil')
+		{
+			if (search_form == "userSearch")
+			{
+				$('#search_primary_number').prop('value',$('#users_new_content #primary_number').val());
+				search1('pnumber');}
+				else
+					{$('#'+search_form).submit();}
+			}
+			else
+			{
+
+				refreshPage(response,page,midblock,method_name);
+			}
+			if(msg[1].trim()=="Command Succeed".trim()){
+	              	// alert(response+', '+controller+', '+ name);
+	              	command_succeed(response,controller,3,name);
+	              } else{
+	              	$('#'+response).html(msg[1]);
+	              }
+
+
+	            }
+
+
+
+
+
+	          }
+	          String.prototype.trim = function() {
+	          	return this.replace(/^\s+|\s+$/g, "");
+	          };
+
+	          Array.prototype.indexOf = function(elt /*, from*/)
+	          {
+	          	var len = this.length >>> 0;
+
+	          	var from = Number(arguments[1]) || 0;
+	          	from = (from < 0)
+	          	? Math.ceil(from)
+	          	: Math.floor(from);
+	          	if (from < 0)
+	          		from += len;
+
+	          	for (; from < len; from++)
+	          	{
+	          		if (from in this &&
+	          			this[from] === elt)
+	          			return from;
+	          	}
+	          	return -1;
+	          };
+
+	          function JAlertPage(str,id)
+	          {
+	          	$('#'+id).text(str);
+	          }
+	          function focus_input(id)
+	          {
+	          	var focusinput = $('#'+id);
+	          	focusinput.focus();
+	          	var valfocusinput = focusinput.val();
+	          	if(valfocusinput.trim()!="")
+	          		$('#'+id).prop('value','');
+	          	$('#'+id).prop('value',valfocusinput);
+	          }
+	          function popitup(url) {
+	          	webphone=window.open(url,'_webphone','height=520px,width=370px,resizable=0');
+	          	webphone_container=$('#webphone_container');
+	//webphone_container.hide();
+	if (window.focus) {webphone.focus()}
+		return false;
+}
+
+function view_info() {
+	$('#loggedin_login_form').submit();
+}
+
+/*Code related to submit_form_with_mandatory_fields() begins*/
+
+
+/*This function is used when you want to have a form with mandatory fields error check before form submission*/
+function submit_form_with_mandatory_fields(parent_name_of_mandatory_elements,submit_function)
+{
+	mandatory_flag = ""
+	elements = $("#"+parent_name_of_mandatory_elements+" .mandatory");
+	elements.each(function() {
+
+		if($(this).prop("value")==null||$(this).prop("value")=="")
+		{
+			$(this).addClass('error');/*If the mandatory field doesn't have a value, class error is added. This adds border_color red to the field*/
+			mandatory_flag="1"; /* A warning flag is raised*/
+		}
+
+	}).promise().done(function(){
+
+		if(mandatory_flag !="1")/*submit the form only if the warning flag is not raised*/
+		{
+			submit_function();
+		}
+		else
+		{
+			click_the_first_mandatory_element(parent_name_of_mandatory_elements);/*if there are mandatory elements that are not filled, click on the first mandatory element section in the menu.*/
+		}
+	});
+	return false;
+}
+
+
+function click_the_first_mandatory_element(parent_name_of_mandatory_elements)
+{
+
+	located_section=get_parent((($("#"+parent_name_of_mandatory_elements+" .error:first"))),parent_name_of_mandatory_elements);/*Get the first mandatory element that is not filled and get its menu section*/
+
+	if(($('#'+parent_name_of_mandatory_elements+' ul.menu>li').find(located_section)).length>0)/*Check if it is in the first level of menu*/
+	{
+		$(located_section).click();
+	}
+	else/*If it is not in the first level of menu*/
+	{
+		/*Click on the element's parent menu first, then click on the menu where the element is present at*/
+		$(located_section).closest('#'+parent_name_of_mandatory_elements+' ul.menu>li').click(function(){
+			$(located_section).click();
+		});
+
+	}
+
+	return false;
+
+}
+
+/*Loop through the menus, check if any of the parent of the passed element matches the menu id.
+ The relationship we are looking for is (menu_array_name's link == passed_obj's id).
+ If we found a match, the match is returned*/
+ function get_parent(jquery_obj,parent_name_of_mandatory_elements)
+ {
+ 	/*Get the menus provided*/
+ 	menu_array_name=$('#'+parent_name_of_mandatory_elements+' ul.menu a').each(function(){return $(this).attr('link');});
+
+ 	for(var i=0;i<=menu_array_name.length;i++)
+ 	{
+ 		id=$(menu_array_name[i]).attr('link');
+
+ 		if(jquery_obj.parents('div').closest('#'+id).length > 0)
+ 			return menu_array_name[i];
+ 	}
+
+ }
+
+
+
+
+ /*Remove class error on entering values into mandatory fields*/
+ $(document).delegate('.mandatory', 'keypress', function() {
+ 	$(this).css('borderColor',"");
+ 	$(this).removeClass('error');
+ });
+
+ /*Code related to submit_form_with_mandatory_fields() ends*/
+
+
+
+ function blocked_list()
+ {
+ 	fill_midblock("/messages/manageblocked");
+ }
+ function block_num(num,type)
+ {
+ 	$.post("/messages/block" , "authenticity_token="+encodeURIComponent('q65kYPO+R2NAGQrcrJDdMWy/2KolWP9GusMCxe9yB1Jf6PGSg+NirvksJqcJSyH3i4zgyRPieVbsT9P9q1TU5w==')+"&block_num="+num+"&type="+type,function(data) {
+ 		msg = data.split("=");
+ 		if(data.indexOf("Your session has expired. Please login again",0)>-1)
+ 			error=data
+ 		else
+ 			error=msg[1]
+ 		if(msg[0] != 0)
+ 		{
+ 			$('#message_index_res').css( "color", "red" );
+ 			$('#message_index_res').html(error);
+ 		}
+ 		else
+ 		{
+ 			$('#message_index_res').css( "color", "green" );
+ 			if (type =="black")
+ 			{
+ 				$('#message_index_res').html(num + " is blocked successfully.");
+ 			}
+ 			else
+ 			{
+ 				$('#message_index_res').html(num + "is added to White List successfully.");
+ 			}
+ 		}
+ 	});
+ }
+ function block_num_list(type)
+ {
+ 	if ( type == "black" )
+ 	{
+ 		var num_list = $('#block_num_black').val();
+ 		var emp_text = "Please enter a Number to add into the BlockList."
+ 	}
+ 	else
+ 	{
+ 		var num_list = $('#block_num_white').val();
+ 		var emp_text = "Please enter a Number to add into the WhiteList."
+ 	}
+ 	if(num_list =="")
+ 	{
+ 		$('#block_response').css( "color", "red" ) ;
+ 		$('#block_response').html("Please enter a Number to add into the WhiteList.");
+ 		return false;
+ 	}
+
+
+ 	$('#block_loader').html('<b>Loading...</b>');
+ 	$.post("/messages/block" , "authenticity_token="+encodeURIComponent('RRFCB8AZoTeAl++XpfUQzyOZiH/Pf02pNCclRu8MR9mxV9f1sESE+jmiw+wALuwJxKqwHPnFy7liq/R+qyqUbA==')+"&block_num="+num_list+"&type="+type,function(data) {
+ 		$('#block_loader').html("");
+ 		msg = data.split("=");
+ 		if(data.indexOf("Your session has expired. Please login again",0)>-1)
+ 			error=data
+ 		else
+ 			error=msg[1]
+ 		if(msg[0] != 0)
+ 		{
+ 			$('#block_response').css( "color", "red" );
+ 			$('#block_response').html(error);
+ 		}
+ 		else
+ 		{
+ 			$('#blocked_edit_form #block_num').val("");
+ 			$('#block_response').css( "color", "green" ) ;
+ 			$('#block_response').html(num_list +" is added successfully");
+ 			$.post("/messages/blockedlist","authenticity_token="+encodeURIComponent('YNQcXDygZACrWZcCV/LmWSx3YhRCWzsl4FD2Wk4IDp2UkomuTP1BzRJsu3nyKRqfy0Rad3ThvTW23CdiCi7dKA==')+"&type="+type,function(data)
+ 			{
+ 				if (type =="black")
+ 				{
+ 					assign_html_and_call_change_rtl('blocked_table_div',data);
+ 				}
+ 				else
+ 				{
+ 					assign_html_and_call_change_rtl('white_table_div',data);
+ 				}
+ 			});
+ 		}
+ 	});
+ }
+ function unblock_num(id,unblock_num,type)
+ {
+ 	$('#block_loader').html('<b>Loading...</b>');
+ 	$.post("/messages/unblock","authenticity_token="+encodeURIComponent('n7JQStzFeTfUKLUdNU4y+lA5uelzXmNDTuk3mxetbL9r9MW4rJhc+m0dmWaQlc48twqBikXk5VMYZeajU4u/Cg==')+"&unblock_num="+unblock_num+"&type="+type,function(data) {
+ 		$('#block_loader').html("");
+ 		msg = data.split("=");
+ 		if(data.indexOf("Your session has expired. Please login again",0)>-1)
+ 			error=data
+ 		else
+ 			error=msg[1]
+ 		if(msg[0] != 0)
+ 		{
+ 			$('#block_response').css( "color", "red" );
+ 			$('#block_response').html(error);
+ 		}
+ 		else
+ 		{
+ 			$('#block_response').css( "color", "green" ) ;
+
+ 			if (type =="black")
+ 			{
+ 				$('#block_response').html(unblock_num +" is unblocked successfully.");
+ 			}
+ 			else
+ 			{
+ 				$('#block_response').html(unblock_num +" is removed from White List successfully.");
+ 			}
+
+ 			$.post("/messages/blockedlist","authenticity_token="+encodeURIComponent('rVrFiQZIISgXt7h31/sUyqE6SG5Y9ni+AQ6WYgbBUkdZHFB7dhUE5a6ClAxyIOgMRglwDW5M/q5XgkdaQueB8g==')+"&type="+type,function(data)
+ 			{
+ 				if (type =="black")
+ 				{
+ 					assign_html_and_call_change_rtl('blocked_table_div',data);
+ 				}
+ 				else
+ 				{
+ 					assign_html_and_call_change_rtl('white_table_div',data);
+ 				}
+ 			});
+ 		}
+ 	});
+ }
+ function blocked_list_box_close(){
+ 	$('#manage_midblock').html("");
+ 	close_midblock();
+ }
+ function changelocale(locale_key){
+ 	if(locale_key != ""){
+ 		window.location = "/login/index?locale="+locale_key;
+ 	}
+ }
+// Please do not remove this code, as this is important fix
+ 	</script>
+ 	<div id="loaderimg" style="display: none"><div class="loaderimg"></div></div>
+ 	<script type="text/javascript">
+ 		$(document).ready(function(){
+	//console.log(custOutermenuWidth);
+	$("#gbl-srch-plchdr").focusin(function() {
+		$('.usr-srch-resp-blk').fadeIn( 1200 );
+	});
+	$("#gbl-srch-plchdr").focusout(function() {
+		$('.usr-srch-resp-blk').fadeOut( 500 );
+	});
+	$(document).on("click", ".circles-trns-arrow",function() {
+		$('.tran-box-content').toggleClass('heighttrans');
+		$('.quicklook-container').toggleClass('displaytogle');
+		$('.circles-trns-arrow').toggleClass('rotatearw');
+	});
+	$(document).on("click", "#usr-glbl-srch-icn", function(){
+		$('.srch-gbl-blk-frm').toggleClass('expand-srch-blk');
+		$('.usr-srch-resp-blk').toggleClass('expand-srch-blk-wrp');
+	});
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#org_menu_list").toggleClass("toggled");
+		$(this).toggleClass("toggled");
+	});
+	$('.profile-drp-dwn-list-item').click(function(){
+		$('.userdropdata').toggle("");
+	});
+	$('.notifications').click(function(){
+		$('.notidata').toggle("slow");
+	});
+	$(document).on("click", function(event){
+		var $trigger = $(".notifications");
+       // console.log(event.target);
+       if($trigger !== event.target && !$trigger.closest(event.target).length){
+        //	console.log('on once');
+        $(".notidata").slideUp("slow");
+      }
+    });
+	$(document).on("click", "#view_data_user_btn",function() {
+		$('#users_data_list_by').toggleClass('data-user-visible');
+		$('#users_data_graph').toggleClass('hide-user-data-graph');
+    	//$("#view_data_user_btn").css("display", "none");
+    });
+	$(document).on("click", function(event){
+		var $trigger = $(".profile-drp-dwn-list-item");
+		if($trigger !== event.target && !$trigger.has(event.target).length){
+			$(".userdropdata").slideUp("");
+		}
+	});
+	$(document).on("click", function(event){
+		var $trigger = $("#glbl_cmp_prf_btn");
+		if($trigger !== event.target && !$trigger.has(event.target).length){
+            //$(".cmp-dts-anm-rgt").slideUp("fast");
+            $('.cmp-all-pgs-blk').removeClass('cmp-dts-anm-rgt');
+          }
+        });
+	$(document).on("click", "#top_subscr_close",function() {
+		$('.top-subscr-block').fadeOut('slow');
+	});
+    //$('#modifystatus').html('<span></span>');
+    $(document).on("click", "#rep_menu li a",function() {
+    	$("#rep_menu li").removeClass('current');
+    	$(this).parent().addClass('current');
+    });
+    $(document).on("click", ".sub-menu li a",function(e) {
+    	$(this).parents('.has-child').addClass('current');
+    	$(this).parent().addClass('current');
+    	e.stopPropagation();
+    });
+    $(document).on("click", ".inv-top-snd-invs li a",function() {
+    	$('.inv-top-snd-invs li a').removeClass('sel-inv-upld');
+    	$(this).addClass('sel-inv-upld');
+    	var invAltVal = $(this).attr('alt')
+    	if(invAltVal === 'single'){
+    		$('.usr-inv-wrp-blk-lft').addClass('in-lft-dsp-blk');
+    		$('.usr-inv-wrp-blk-rgt').removeClass('in-rgt-dsp-non');
+    	}else if(invAltVal === 'multiple'){
+    		$('.usr-inv-wrp-blk-lft').removeClass('in-lft-dsp-blk');
+    		$('.usr-inv-wrp-blk-rgt').addClass('in-rgt-dsp-non');
+    	}
+    });
+    $(document).on("click", ".inv-drp-link-cust-blk",function() {
+    	$(this).parent().toggleClass('current-sub-act');
+    });
+    $(document).on("click", "#myid_user_add_boxclose", function(){
+    	$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    	$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    	$('#display_user').removeClass('disentusrblk');
+    	$('#display_user').removeAttr( "style" );
+    	$('#add_enterprise_user,#add_enterprise_admin').removeClass('hidden-txt-lnk');
+    });
+    $(document).on("click", "#myid_user_add_boxclose1", function(){
+    	$('#users_edit_page').fadeOut('fast');
+    	$('#user_display_right').fadeIn('fast');
+
+    });
+    $(document).on("click", "#close_display_user_det", function(){
+		//$('.sing-usr-tble tbody tr td input[type=checkbox]').attr('checked',false);
+		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+		$('#user_display_right').removeClass('invusrdspblk');
+		$('.usr-inv-wrp-blk').removeClass('inc-width-outer');
+		$('#user_display_right').removeAttr('style');
+		$('#users_common_res').html("");
+		$("input:checkbox[name=user_ids]:checked").each(function(){
+			$(this).prop('checked', false);
+		});
+
+	});
+    $(document).on("click", "#close_display_user_new_inv", function(){
+    	$('html, body').removeClass('err-red');
+    	$('#users_common_res').html("");
+    	$('#myid_authentications_index_res').html("");
+    	$('.sing-usr-tble tbody tr td input[type=checkbox]').attr('checked',false);
+    	$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    	$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    	$('#user_display_right').removeClass('invusrdspblk');
+    	$('.usr-inv-wrp-blk').removeClass('inc-width-outer');
+    	$('#user_display_right').removeAttr('style');
+    	$('#user_select_all_check_box').attr('checked',false);
+    	$('#display_inv_user,#inv_user_display_right,.sng-otr-block').removeAttr('style');
+    	$('#display_inv_user').css('display','none');
+    	$('#add_enterprise_user_inv').removeClass('hidden-txt-lnk');
+
+    });
+    $(document).on("click", "#close_display_user", function(){
+    	$('.sing-usr-tble tbody tr td input[type=checkbox]').attr('checked',false);
+    	$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    	$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    	$('#user_display_right').addClass('invusrdspblk');
+    	$('#user_display_right').removeAttr('style');
+    	$('#user_select_all_check_box').attr('checked',false);
+    	$('#display_user').removeAttr('style');
+    	$('.usr-inv-wrp-blk').removeClass('inc-width-outer');
+    	$('#users_common_res').html("");
+    });
+    $(document).on("click", ".sing-usr-tble tbody tr td input[type=checkbox]", function(){
+    	var inptchkdlgt = $('.sing-usr-tble tbody tr td input[type=checkbox]:checked').length;
+	//	var inptchkdlgt2 = $('.sing-usr-tble tbody tr th input[type=checkbox]:checked').length;
+	//	console.log(inptchkdlgt2);
+	if(inptchkdlgt	== 0){
+		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+		$('#user_display_right').removeAttr('style');
+	}else if(inptchkdlgt <= 1){
+		$('.cust-sng-usr-block').addClass('redu-width-outer');
+		if($('#display_user').hasClass('disentusrblk')){
+			$('#display_user').removeClass('disentusrblk');
+		}
+		$('.sng-user-rght-blk').addClass('inc-width-outer');
+		setTimeout(function(){
+
+			$('#user_display_right').css('display','block');
+			$('#display_user').removeAttr('style');
+
+		}, 1000);
+		if($('#add_enterprise_user').hasClass('hidden-txt-lnk')){
+			$('#add_enterprise_user').removeClass('hidden-txt-lnk');
+		}else{
+
+		}
+		if($('#add_enterprise_admin').hasClass('hidden-txt-lnk')){
+			$('#add_enterprise_admin').removeClass('hidden-txt-lnk');
+		}else{
+
+		}
+	}else{
+		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+		$('#user_display_right').css('display','none');
+		if($('#add_enterprise_user').hasClass('hidden-txt-lnk')){
+			$('#add_enterprise_user').removeClass('hidden-txt-lnk');
+		}else{
+
+		}
+		if($('#add_enterprise_admin').hasClass('hidden-txt-lnk')){
+			$('#add_enterprise_admin').removeClass('hidden-txt-lnk');
+		}else{
+
+		}
+	}
+});
+
+    $(document).on("click", ".sing-usr-tble tbody.sing-usr-tble_tbdy tr th input[type=checkbox]", function(){
+
+    	var inptchkdlgt2 = $('.sing-usr-tble tbody.sing-usr-tble_tbdy tr th input[type=checkbox]:checked').length;
+    	console.log(inptchkdlgt2 + " test");
+    	if(inptchkdlgt2	== 0){
+    		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    		if($('#display_user').hasClass('disentusrblk')){
+    			$('#display_user').removeClass('disentusrblk');
+    		}
+    		$('#display_user').removeAttr( "style" );
+    	}else if(inptchkdlgt2 <= 1){
+    		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+			//$('.cust-sng-usr-block').removeClass('redu-width-outer');
+			if($('#display_user').hasClass('disentusrblk')){
+				$('#display_user').removeClass('disentusrblk');
+			}
+			$('#display_user').removeAttr( "style" );
+			setTimeout(function(){
+				$('.sng-user-rght-blk').removeClass('inc-width-outer');
+				$('#user_display_right').css('display','block');
+			}, 1000);
+			if($('#add_enterprise_admin').hasClass('hidden-txt-lnk')){
+				$('#add_enterprise_admin').removeClass('hidden-txt-lnk');
+			}else{
+
+			}
+		}else{
+			if($('#add_enterprise_admin').hasClass('hidden-txt-lnk')){
+				$('#add_enterprise_admin').removeClass('hidden-txt-lnk');
+			}else{
+
+			}
+			$('#user_display_right').css('display','none');
+		}
+	});
+
+    $(document).on("click", ".inv-usr-tble tbody tr td input[type=checkbox]", function(){
+    	var inptchkdlgt = $('.sing-usr-tble tbody tr td input[type=checkbox]:checked').length;
+    	if(inptchkdlgt	== 0){
+    		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    		$('.usr-inv-wrp-blk').removeClass('inc-width-outer');
+    	}else if(inptchkdlgt <= 1){
+    		$('.cust-sng-usr-block').addClass('redu-width-outer');
+    		if($('#display_user').hasClass('disentusrblk')){
+    			$('#display_user').removeClass('disentusrblk');
+    		}
+
+    		$('#user_display_right').removeClass('invusrdspblk');
+    		$('#user_display_right').removeAttr('style');
+    		setTimeout(function(){
+    			if($('.cust-sng-usr-block').hasClass('redu-width-outer')){
+    				$('.sng-user-rght-blk').addClass('inc-width-outer');
+    				$('.usr-inv-wrp-blk').addClass('inc-width-outer');
+    				$('#user_display_right').removeClass('invusrdspblk');
+    				$('#user_display_right').removeAttr('style');
+    			}
+					//$('#user_display_right').css('display','none');
+				}, 1000);
+    		if($('#add_enterprise_user_inv').hasClass('hidden-txt-lnk')){
+    			$('#add_enterprise_user_inv').removeClass('hidden-txt-lnk');
+    		}else{
+
+    		}
+    	}else{
+    		$('.cust-sng-usr-block').removeClass('redu-width-outer');
+    		$('.sng-user-rght-blk').removeClass('inc-width-outer');
+    		$('.usr-inv-wrp-blk').removeClass('inc-width-outer');
+    		$('#user_display_right').removeAttr('style');
+    		if($('#add_enterprise_user_inv').hasClass('hidden-txt-lnk')){
+    			$('#add_enterprise_user_inv').removeClass('hidden-txt-lnk');
+    		}else{
+
+    		}
+    	}
+    });
+
+  });
+
+function display_user(id,name,mobile,email,primary_number,u_id,monitor_calls,monitor_sms,profile_pic_url,e911_status,e911_updated,device_type,analytics_status)
+{
+	if (id == ""){
+		$("#delete_admin_link").hide();
+	}else{
+		$("#delete_admin_link").show();
+	}
+	if(analytics_status !== "ONBOARDING" || analytics_status !== "ANALYTICS_READY"){
+		$(".noemm.label").hide();
+		$(".noemm.status").html("");
+	}
+	if(analytics_status == "ONBOARDING"){
+		$(".noemm.label").show();
+		$(".noemm.status").html("ONBOARDING");
+	}
+	if(analytics_status == "ANALYTICS_READY"){
+		$(".noemm.label").show();
+		$(".noemm.status").html("CONFIGURED");
+	}
+	if (e911_status == "0"){
+		$(".e911_status").addClass("notinitiated");
+		$(".e911_status").prop("title", "Not initiated");
+	}else if (e911_status == "1"){
+		$(".e911_status").addClass("initiated");
+		$(".e911_status_updated_at").addClass("initiateddate");
+		$(".e911_status_updated_at").text(e911_updated);
+		$(".e911_status").prop("title", "Accepted");
+	}else{
+		$(".e911_status").addClass("declined");
+		$(".e911_status").prop("title", "Declined");
+	}
+	var checked =document.getElementById('check_'+id).checked;
+	if(checked==false)
+	{
+		document.getElementById('check_'+id).checked=false;
+	}
+	else
+	{
+		$('.sng-chk-b').attr('checked', false);
+
+		document.getElementById('check_'+id).checked=true;
+		$('#users_common_res').html("");
+		var atLeastOneIsChecked = $('.sng-chk-b:checked').length == 1;
+
+		$("input:checkbox[name=user_ids]:checked").each(function(){
+			checked_id = $(this).val();
+			$('.scrollup').animate({
+          //scrollTop: $("#org_details_div").offset().top
+          scrollTop: $("#org_details_div").offset()
+        }, 800);
+		});
+		if(atLeastOneIsChecked === true){
+			if (checked_id != id){
+				id= checked_id;
+				str_display = $('#check_'+id).attr("onclick")
+				var arr_display = str_display.split('","');
+				name = arr_display[1];
+				mobile = arr_display[2];
+				email = arr_display[3];
+				primary_number = arr_display[4];
+			}
+			var edit_link = $('#edit_'+id).attr('url');
+			var delete_link = $('#del_'+id).attr('url');
+			$('#u_img').attr('src',profile_pic_url);
+			$('#u_name').html(name);
+			$('#u_name').prop('title',name);
+	     // $('#u_name').attr('onclick',"addClickHandlers('activator2["+id+"]')");
+	     $('#u_mobile').html(mobile);
+	     if(device_type == "android" || device_type == "apple"){
+	     	$('.device-type.fa').attr('class',"md xs-margin-right device-type fa");
+	     	$('.device-type.fa').addClass("fa-"+device_type);
+	     }else{
+	     	$('.device-type.fa').attr('class',"md xs-margin-right hide-div device-type fa");
+	     }
+	     $('#u_email').html("Email : "+email);
+	     $("#u_email").prop("title", email);
+	     $('#u_workphone').html(primary_number);
+	     $('#u_primary_number').html(primary_number);
+	     $('#u_trash').attr('onclick',delete_link);
+	     $('#u_edit').attr('onclick',"addClickHandlers('activator2["+id+"]')");
+	     $("#u_name").css("word-wrap", "break-word");
+	     if(monitor_calls === "auto") {
+	     	$("#call-recording-state-icon").html("<i class=\"fa fa-check\" aria-hidden=\"true\" style=\"color:green; font-size:17px;\"></i>");
+	     	$("#call-recording-state-text").html("<p>Enabled</p>");
+	     } else {
+	     	$("#call-recording-state-icon").html("<i class=\"fa fa-ban\" aria-hidden=\"true\" style=\"color:red; font-size:17px;\"></i>");
+	     	$("#call-recording-state-text").html("<p>Disabled</p>");
+	     }
+
+	     if(monitor_sms === "on") {
+	     	$("#sms-recording-state-icon").html("<i class=\"fa fa-check\" aria-hidden=\"true\" style=\"color:green; font-size:17px;\"></i>");
+	     	$("#sms-recording-state-text").html("<p>Enabled</p>");
+	     } else {
+	     	$("#sms-recording-state-icon").html("<i class=\"fa fa-ban\" aria-hidden=\"true\" style=\"color:red; font-size:17px;\"></i>");
+	     	$("#sms-recording-state-text").html("<p>Disabled</p>");
+	     }
+	     if(billing_infos != undefined){
+	     	billing_info = ($.grep(billing_infos, function(el){ return (el.userid == id); }))[0];
+	     	if(billing_info && billing_info.billing_info_available){
+	     		set_billing_plan_name(billing_info);
+	     		set_call_details(billing_info);
+	     		set_sms_details(billing_info);
+	     		set_data_details(billing_info);
+	     		$("#call_recording_id").css('display', 'block');
+	     		$("#sms_recording_id").css('display', 'block');
+	     	} else {
+	     		reset_call_details();
+	     		reset_sms_details();
+	     		reset_data_details();
+	     		reset_billing_plan_name();
+	     		reset_call_recording();
+	     		reset_sms_recording();
+	     	}
+	     }
+	   }else{
+	   	setTimeout(function(){
+	   		add_user();
+	   	},500);
+	   	$('.cust-sng-usr-block').removeClass('redu-width-outer');
+	   	$('.sng-user-rght-blk').removeClass('inc-width-outer');
+	   }
+	 }
+	}
+
+	function set_call_details(billing_info){
+    var billing_call_progresval= billing_info.minutes.consumed; // 10 Value Needs to change here
+    var newcalls = (billing_call_progresval / billing_info.minutes.allocated) * 100;
+    $( "#billing_progress_call" ).progressbar({
+    	value: newcalls
+    });
+    $("#peren_call").text(billing_call_progresval);
+    $("#peren_call_without_bp").text(billing_call_progresval + " mins");
+    $("#peren_call").css('margin-left',newcalls+'%')
+    if(newcalls > 100){
+    	$("#peren_call").text(billing_call_progresval);
+    	$("#peren_call").css('margin-left',80+'%');
+    	$("#peren_call").css('direction','rtl');
+    	$("#peren_call").css('padding-left','10px');
+    	$('#peren_call').append('<style>#peren_call::before{left:25%;}</style>');
+    }
+    var valuebillingcalllength = newcalls.length;
+    if(valuebillingcalllength >= 4){
+    	$("#peren_call").css('margin-left',70+'%');
+    	$("#peren_call").css('direction','rtl');
+
+    }
+    $("#progress_call_id #billing_default_value").attr("data-value", billing_info.minutes.allocated + " mins");
+    if(newcalls <= 80){
+    	$("#billing_progress_call .ui-progressbar-value").css("background", "#86B606");
+    	$("#peren_call").css('background','#86B606')
+    	$('#peren_call').append('<style>#peren_call::before{color:#86B606 !important}</style>');
+    }else if(newcalls >= 80 && newcalls <= 95) {
+    	$("#billing_progress_call .ui-progressbar-value").css("background", "#F89C15");
+    	$("#peren_call").css('background','#F89C15')
+    	$('#peren_call').append('<style>#peren_call::before{color:#F89C15 !important}</style>');
+    }else if(newcalls >= 95){
+    	$("#billing_progress_call .ui-progressbar-value").css("background", "#FF0000");
+    	$("#peren_call").css('background','#FF0000')
+    	$('#peren_call').append('<style>#peren_call::before{color:#FF0000 !important}</style>');
+    }
+  }
+
+  function set_sms_details(billing_info){
+    var billing_sms_progresval=  billing_info.messages.consumed;// 80 Value Needs to change here
+    var newsms1 = (billing_sms_progresval / billing_info.messages.allocated) * 100;
+    $( "#billing_progress_sms" ).progressbar({
+    	value: newsms1
+    });
+    $("#peren_sms").text(billing_sms_progresval);
+    $("#peren_sms_without_bp").text(billing_sms_progresval + " msgs");
+    $("#peren_sms").css('margin-left',newsms1+'%')
+    if(newsms1 > 100){
+    	$("#peren_sms").text(newsms1);
+    	$("#peren_sms").css('margin-left',80+'%');
+    	$("#peren_sms").css('direction','rtl');
+    	$("#peren_sms").css('padding-left','10px');
+
+    	$('#peren_sms').append('<style>#peren_sms::before{left:25%;}</style>');
+
+
+    }
+
+    $("#progress_sms_id #billing_default_value").attr("data-value", billing_info.messages.allocated);
+    var valuebillingmsglength = newsms1.length;
+    if(valuebillingmsglength >= 3){
+    	$("#peren_sms").css('margin-left',55+'%');
+    }
+    if(newsms1 <= 80){
+    	$("#billing_progress_sms .ui-progressbar-value").css("background", "#86B606");
+    	$("#peren_sms").css('background','#86B606')
+    	$('#peren_sms').append('<style>#peren_sms::before{color:#86B606 !important}</style>');
+    }else if(newsms1 >= 80 && newsms1 <= 95) {
+    	$("#billing_progress_sms .ui-progressbar-value").css("background", "#F89C15");
+    	$("#peren_sms").css('background','#F89C15')
+    	$('#peren_sms').append('<style>#peren_sms::before{color:#F89C15 !important}</style>');
+    }else if(newsms1 >= 95){
+    	$("#billing_progress_sms .ui-progressbar-value").css("background", "#FF0000");
+    	$("#peren_sms").css('background','#FF0000')
+    	$('#peren_sms').append('<style>#peren_sms::before{color:#FF0000 !important}</style>');
+    }
+  }
+
+  function set_data_details(billing_info){
+    var billing_data_progresval=  billing_info.data.consumed; // 110345 Value Needs to change here
+    var newdata123 = (billing_data_progresval / billing_info.data.allocated) * 100;
+    $( "#billing_progress_data" ).progressbar({
+    	value: newdata123
+    });
+    $("#peren_data").text(billing_data_progresval);
+    $("#peren_data_without_bp").text(billing_info.data.raw_data);
+    $("#peren_data").css('margin-left',newdata123+'%')
+    if(newdata123 > 100){
+    	$("#peren_data").text(newdata123);
+    	$("#peren_data").css('margin-left',55+'%');
+    	$("#peren_data").css('direction','rtl');
+    	$("#peren_data").css('padding-left','10px');
+
+    	$('#peren_data').append('<style>#peren_data::before{left:10%;}</style>');
+    }
+
+    $("#progress_data_id #billing_default_value").attr("data-value", billing_info.data.allocated);
+    var valuebillingdatalength = newdata123.length;
+    if(valuebillingdatalength > 4){
+    	$("#peren_data").css('margin-left',55+'%');
+    }
+    if(newdata123 <= 80){
+    	$("#billing_progress_data .ui-progressbar-value").css("background", "#86B606");
+    	$("#peren_data").css('background','#86B606')
+    	$('#peren_data').append('<style>#peren_data::before{color:#86B606 !important}</style>');
+    }else if(newdata123 >= 80 && newdata123 <= 95) {
+    	$("#billing_progress_data .ui-progressbar-value").css("background", "#F89C15");
+    	$("#peren_data").css('background','#F89C15')
+    	$('#peren_data').append('<style>#peren_data::before{color:#F89C15 !important}</style>');
+    }else if(newdata123 >= 95){
+    	$("#billing_progress_data .ui-progressbar-value").css("background", "#FF0000");
+    	$("#peren_data").css('background','#FF0000')
+    	$('#peren_data').append('<style>#peren_data::before{color:#FF0000 !important}</style>');
+    }
+  }
+
+  function set_billing_plan_name(billing_info){
+  	$("#billing_plan_ptag_id").text(billing_info.billing_plan_name);
+  	$("#billing_plan_name_id").css('display', 'block');
+  }
+
+  function reset_call_details(){
+  	$("#billing_progress_call").css('display', 'none');
+  }
+
+  function reset_sms_details(){
+  	$("#billing_progress_sms").css('display', 'none');
+  }
+
+  function reset_data_details(){
+  	$("#billing_progress_data").css('display', 'none');
+  }
+
+  function reset_billing_plan_name(){
+  	$("#billing_plan_name_id").css('display', 'none');
+  }
+
+  function reset_call_recording(){
+  	$("#call_recording_id").css('display', 'none');
+  }
+
+  function reset_sms_recording(){
+  	$("#sms_recording_id").css('display', 'none');
+  }
+</script>
+<script type="text/javascript">
+
+	function breadcrumbSuborgSelect(obj){
+		var idx = $('.breadcrumb.suborg.description').index(obj);
+		var ids = $('.breadcrumb.suborg.description').map(function(idx, el){return $(el).attr('data-id')});
+		var orgids = $('.breadcrumb.suborg.description').map(function(idx, el){return $(el).attr('data-orgid')});
+		var orgnames = $('.breadcrumb.suborg.description').map(function(idx, el){return $(el).text()});
+		ids = ids.slice(0, idx+1);
+		orgids = orgids.slice(0, idx+1);
+		orgnames = orgnames.slice(0, idx+1);
+
+		var lastid = ids[ids.length-1];
+		$.ajax({
+			type: "POST",
+			url: "/organization_overviews/index",
+			data: {'orgid': lastid, 'ids[]': ids.get(), 'org_ids[]': orgids.get(), 'org_names[]': orgnames.get(), 'authenticity_token': 'zCvJAzd7TpKQfVObw73MVYrXM6o1A31MiBdMjsRWxaw4bVzxRyZrXylIf+BmZjCTbeQLyQO5+1zem522gHAWGQ=='},
+			success: function(data){switchOrg();},
+			async: false
+		});
+	}
+
+	function switchOrg(){
+		if($('.listitem.selected').length > 0){
+			$('.listitem.selected').click();
+		}else{
+			fill('/dashboard/index','tab1','Dashboard');
+		}
+	}
+	$(document).ready(function() {
+		do_changes_for_rtl();
+		$(".signin").click(function(e) {
+			e.preventDefault();
+			$("div#admin_pan").toggle();
+			$(".signin").toggleClass("menu-open");
+		});
+
+		$("div#admin_pan").mouseup(function() {
+			return false
+		});
+		$(document).mouseup(function(e) {
+			if($(e.target).parent("a.signin").length==0) {
+				$(".signin").removeClass("menu-open");
+				$("div#admin_pan").hide();
+			}
+		});
+
+
+		var logo_url = "";
+		var selectedLogo = "";
+		$(".container .topblock div.header_logo").css("background", logo_url + " no-repeat center right" );
+		if (selectedLogo == "1"){
+			$('#image1').attr('src',"/branding/theme-enterprise.theme/images/logo_big.png");
+		}else if (selectedLogo == "2"){
+			$('#image1').attr('src',"/branding/theme-enterprise.theme/images/");
+		}
+	});
+</script>
+
+            </div>
+            <div class="col-sm-12 login-right-center-item">
+              <div class="container-fluid">
+                <div class="b-row">
+                  <div class="container1 organ_03block col-sm-12 fullnopadding">
+                    <div class="txtdiscrip"></div>
+                    <!--Login block start onclick="window.location='movius'"-->
+                    <div class="container-fluid login_main entr-adm-lgin-scrn bg-white">
+                      <div class="b-row midbg selected_color fullnopadding text-center">
+                        <h2 class="text-xl fullnopadding text-normal brow-bold xl-margin-top-bottom login-mainpage-height">Welcome!</h2>
+                        <!-- <h5 class="xl-margin-bottom"></h5> -->
+                       <!--  <h5 class="movius-texts-color xl xl-margin-bottom"></h5> -->
+                        <span class="entp-txt-blck" style="display:none;"></span>
+                        <h4 id="modifystatus_before" class="bottom-margin">Sign in to your account here</h4>
+                        <span class="bottom-margin text-xs" style="color: red;display: none;" id="modifystatus">
+                      </span>
+                      <form id="loginform" class="form-horizontal col-sm-12" action="/login/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="p7gyJbRitMONLsVzBbQOU8tfqjTLyXZYVo27EH5VoQpT/qfXxD+RDjQb6Qigb/KVLGySV/1z8EgAAWooOnNyvw==" />
+                        <div class="container-fluid">
+                          <div class="b-row">
+                            <h2 class="hide">User Id</h2>
+                            <div class="col-sm-12 bottom-margin display-center">
+                              <div class="container-fluid">
+                                <div class="b-row">
+                                  <input type="text" name="acct" id="acct" class="form-control eaplogininput" required="required" tabindex="1" placeholder="Username" title="Username" />
+                                  <span class="login-form-icon noborder nobackground pos-absolute nopadding display-center search_btn" id="search_user"><img src="/branding_previews/images/Username_icon.png"></span>
+                                  <span class="username-error text-danger pull-left xs-margin-top hide-div">Please enter the username</span>
+                                </div>
+                              </div>
+                            </div>
+                            <h2 class="hide">Password</h2>
+                          <div class="col-sm-12 bottom-margin" onkeydown="if(event.keyCode == 13){ $('#modifystatus').html(''); $('#idLogin').click();return false;}">
+                            <div class="container-fluid">
+                              <div class="b-row">
+                                <input type="password" name="password" id="password" value="" class="form-control eaplogininput" required="required" tabindex="2" autocomplete="off" placeholder="Password" title="Password" />
+                                <span class="search_btn noborder nobackground pos-absolute nopadding login-form-icon display-center" id="search_user"><img src="/branding_previews/images/lock_icon.png"></span>
+                                <span class="password-error text-danger pull-left xs-margin-top hide-div">Please enter the password</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 text-center xl-margin-top xxl-padding-left-right" >
+                            <div  class="submit_btn" id="resetLogin" title="Reset" style="display:none;" onclick="reset_login();"> <a >Reset</a>
+                            </div>
+                            <button type="button" id="idLogin" class="btn btn-primary btn-block xl-margin-bottom" >Login</button>
+                            <a href="#null" id="frgt" class="text-underline btn btn-link text-capitalize" title="" >Forgot password?</a>
+                          </div>
+                          </div>
+                        </div>
+</form>                      </div>
+                      <!--Login block end-->
+                    </div>
+                    <!--professional SOLUTIONs start-->
+                    <div class="login_page_text" style="display:none;">
+                      <h1>PROFESSIONAL SOLUTIONS</h1>
+                      <h2>Where Solutions Meet Expectations</h2>
+                      <p>Next generation platform that enables service providers to offer Telecom 2.0 applications through a cost-effective software based architecture which improves time to market, reduces carbon footprint, and provides innovative business models.</p>
+                      <h2>CLOUD-BASED SYSTEM</h2>
+                      <p>Virtualized multi-tenant architecture designed to reduce time-to-market by allowing customers to deploy either hosted or cloud-based service in SaaS models.</p>
+                      <h2>SIMPLIFIED APPLICATION DEPLOYMENT</h2>
+                      <p>The CAFÉ ADK provides a suite of APIs that enables Telecom 2.0 services. CAFÃ‰â€™s comprehensive development environment allows developers to quickly prototype, testing and deploy applications significantly shortening Time-to-Market.</p>
+                      <h2>SOFTWARE BASED ARCHITECTURE</h2>
+                      <p>CAFÉ software-based architecture supports a variety qualified hardware platforms as well as a broad range of emerging and existing specifications (i.e. ATCA).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 navbar-fixed-bottom  pos-absolute float-bottom lg-margin-bottom">
+              <div class="container-fluid footer text-display-center">
+                <div class="b-row">
+                    <span class="xs-margin-bottom text-xs text-gray-2"><img id='poweredbymovius_grey' class='sm-margin-bottom' src='/branding/theme-enterprise.theme/images/poweredbymovius_grey_v1.png' alt='Powered By Movius'> <img id='poweredbymovius_white' src='/branding/theme-enterprise.theme/images/poweredbymovius_white_v1.png' alt='Powered By Movius'> <br /> (Browser support for Management Portal - Safari: 9+, IE: 11, Firefox: 49+, Chrome: 54+) <br/> (Browser support for Web Client - Firefox: 56+, Chrome: 57+)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- The overlay For Forgot Password -->
+      <div class="modal" id="login_forgot_pass" role="dialog">
+        <div class="modal-dialog modal-sm login_forgot_pass">
+          <div class="modal-content noradius">
+            <div class="modal-body padding login-for-pass">
+              <h3 class="text-left xl-margin-bottom font-bold text-capitalize">Forgot password</h3>
+              <div class="container-fluid">
+                <div class="b-row text-left nopadding">
+                  <p id="login__res" class="text-center text-xs text-danger bottom-margin"></p>
+                  <p class="text-left xs-margin-bottom text-capitalize">Secret question</p>
+                  <p class="font-bold text-left lg-margin-bottom" id="pwd_ajax_content"></p>
+                  <p class="xs-margin-bottom text-left text-capitalize">Secret answer</p>
+                <form id="forgotpwd_form" action="/login/forgotpwd2" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QjKWunq/1nEoJXupaVSpn3jhJxl8eSuoHB8Akp8ZGg62dANICuLzvJEQV9LMj1VZn9IfekrDrbhKk9Gq2z/Juw==" />
+                  <input type="hidden" name="acct1" id="acct1" />
+                  <div class="b-row xl-margin-bottom" onkeydown="if(event.keyCode == 13){$('#forgot_pwd_submit').click();return false;}">
+                    <input type="text" name="secret_answer" id="secret_answer" min="3" onblur="validation(this.id);" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="b-row">
+                  <div class="col-sm-12 nopadding">
+                    <input type="button" name="" id="forgot_pwd_submit" class="btn btn-primary forgot_pwd_submit" value="Proceed">
+                    <input type="button" name="" id="forgot_pwd_close" class="btn btn-secondary cancel2" value="Close" data-dismiss="modal">
+                  </div>
+                </div>
+              </div>
+</form>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="login_generate_pass" role="dialog">
+        <div class="modal-dialog login_generate_pass modal-sm">
+          <div class="modal-content noradius">
+            <div class="modal-body login-gen-pass padding">
+              <div class="container-fluid">
+                <div class="b-row">
+                  <h3 class="lg-margin-bottom font-bold text-capitalize">Reset password</h3>
+                </div>
+                <div class="b-row text-center nopadding">
+                  <p id="resetpwd_res" class="bottom-margin text-xs"></p>
+                  <form id="resetpwd_form" action="/login/resetpwd" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="VtNtRdTyultccTIzRBRnLmF7uFcl7JZBPzp8RwoYAmuilfi3pK+fluVEHkjhz5vohkiANBNWEFFptq1/Tj7R3g==" />
+                    <div class="b-row lg-margin-bottom">
+                      <input type="hidden" name="acct2" id="acct2" />
+                      <input type="hidden" name="secret_answer1" id="secret_answer1" />
+                      <div id="webpwdreset" onkeydown="if(event.keyCode == 13){$('#reset_pwd_submit').click();return false;}">
+                        <input type="password" name="login_password" id="login_password" autocomplete="off" placeholder="New web password" class="form-control bottom-margin" title="Administrator password to login into the web portal" />
+                        <input type="password" name="r_new_pwd" id="r_new_pwd" autocomplete="off" class="form-control" placeholder="Retype web password" title="Confirm Administrator password to login into the web portal" />
+                      </div>
+                      <input type="hidden" name="force_set_web_pwd" id="force_set_web_pwd" />
+                      <div id="tuipwdreset" onkeydown="if(event.keyCode == 13){$('#reset_pwd_submit').click();return false;}">
+                        <input type="password" name="tui_pwd" id="tui_pwd" autocomplete="off" placeholder="New voicemail password" class="form-control  bottom-margin" />
+                        <input type="password" name="r_tui_pwd" id="r_tui_pwd" placeholder="Retype voicemail password" autocomplete="off" class="form-control bottom-margin" />
+                      </div>
+                      <div id="secretquestionansreset" class="top-margin">
+                        <select name="secret_question_reset" id="secret_question_reset" title="Secret question the answer to which will enable the subscribers to recover their passwords if lost." class="form-control bottom-margin"><option value="question_childhood_nickname">What was your childhood nickname?</option>
+<option value="question_favourite_movie">Which is your favorite movie?</option>
+<option value="question_first_school">What is the name of your first school?</option>
+<option value="question_favorite_teacher">Who was your favorite teacher?</option>
+<option value="question_favorite_pet">What is the name of your favorite pet?</option></select>
+                      </div>
+                      <input type="text" name="secret_answer_reset" id="secret_answer_reset" max="255" min="3" onblur="validation(this.id);" title="The answer to secret question that will enable the subscribers to reset password." class="form-control" placeholder="Secret answer" />
+                    </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="b-row">
+                  <div class="col-sm-12 nopadding">
+                    <button type="button" name="" id="reset_pwd_submit" class="reset_pwd_submit btn btn-primary">Save</button>
+                    <button type="button" name="" id="reset_pwd_close" class="cancel2 btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+</form>            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- The JavaScript -->
+<script type="text/javascript">
+  $(document).ready(function(){
+      var windheight = $(window).height();
+        $(".login-right-height").css("height",windheight).css("margin-top","-1px");
+
+      window.name=""
+
+      navigator.sayswho= (function(){
+    var ua= navigator.userAgent, tem,
+    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1] || '');
+    }
+    if(M[1]=== 'Chrome'){
+        tem= ua.match(/\bOPR\/(\d+)/)
+        if(tem!= null) return 'Opera '+tem[1];
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+    return M.join(' ');
+})();
+
+br_name = navigator.sayswho.split(" ")[0];
+br_vr = navigator.sayswho.split(" ")[1];
+if ((br_name.indexOf("Chrome") != -1  && parseInt(br_vr) < 54 ) || (br_name.indexOf("Firefox") != -1 && parseInt(br_vr) < 49 ) || (br_name.indexOf("Safari") != -1 && parseInt(br_vr) < 9 ) || (br_name.indexOf("IE") != -1 && parseInt(br_vr) < 11 ) || (br_name.indexOf("Opera") != -1 && parseInt(br_vr) < 41 ) || (br_name.indexOf("Edge") != -1 && parseInt(br_vr) < 37 ))
+    {
+      alert("The browser you are currently using is not supported and some of the features may not work as expected. For the complete experience, use one of the following browsers (or more recent versions of): Safari: 9+, IE: 11, Firefox: 49+, Chrome: 54+." );
+    }
+
+  });
+
+      function reset_login()
+      {document.getElementById('loginform').reset();}
+      function myid_reg_close()
+  {
+
+    close_midblock();
+  }
+
+
+      function open_myid(org)
+      {
+        fill_midblock("/login/virtual_numbers_list");
+          $('#box').css("left","21%");
+                    $('#box').css("width","52%");
+
+
+      }
+
+$('#idLogin').click(function() {
+   $(".username-error").addClass("hide-div");
+    $(".password-error").addClass("hide-div");
+    $("#acct").css("border", "1px solid #ccc");
+    $("#password").css("border", "1px solid #ccc");
+    $('#modifystatus').html("");
+  if($('#acct').prop('value').length > 0 && $('#password').prop('value').length > 0)
+  {
+    $("#acct").css("border", "1px solid #ccc");
+    $(".username-error").addClass("hide-div");
+    $("#password").css("border", "1px solid #ccc")
+    $(".password-error").addClass("hide-div");
+
+    var password = $("#password").val();
+    var encoded_password = XORCipher.encode("AVOENBAX", Base64.encode(password));
+    $("#password").val(encoded_password);
+    $('#modifystatus').html("");
+    $('#loginform').submit();
+    return false;
+  }
+
+  if(($('#acct').prop('value')==null)||($('#acct').prop('value')=='' ))
+  {
+    $("#acct").css("border", "1px solid #FF4B4B");
+    $(".username-error").removeClass("hide-div");
+  }
+  if(($('#password').prop('value')==null)||($('#password').prop('value')=='' ))
+  {
+    $("#password").css("border", "1px solid #FF4B4B")
+    $(".password-error").removeClass("hide-div");
+  }
+});
+
+$(function() {
+  $('#frgt').click(function() {
+
+    $('#login__res').hide();
+    if(($('#acct').prop('value')==null)||($('#acct').prop('value')=='' ))
+    {
+      $("#acct").css("border", "1px solid #FF4B4B");
+      $(".username-error").removeClass("hide-div");
+      return false;
+    }
+    $('#modifystatus').html("")
+    $('#secret_answer').prop('value',"");
+
+    if(($('#acct').prop('value')==null)||($('#acct').prop('value')==''))
+    {
+      $('#modifystatus').css( "color", "#FF4B4B" ) ;
+      $('#modifystatus').html("Please correct the following error(s): User Name or Password is incorrect");
+    }
+    else{
+      $('#acct1').prop('value',$('#acct').val());
+      window.scrollTo(0,0);
+      $.post("/login/forgotpwd","authenticity_token="+encodeURIComponent('KNgo2hKjrugEsnZbWJzKILUZtIDR6R32TaPIL4W4tWTcnr0oYv6LJb2HWiD9RzbmUiqM4+dTm+YbLxkXwZ5m0Q==')+"&acct=" + encodeURIComponent($('#acct1').prop('value')), function(data)
+          {
+            msg = data.split("=");
+            if(data.indexOf("Your session has expired. Please login again",0)>-1)  {
+              error=data;
+            }
+            else{
+              error=msg[1]
+            }
+                if(data.indexOf("=",0)!=-1)
+                {
+                  if(msg[0] == "302")
+                  {
+                    location.href = msg[1]
+                  }
+                  else
+                  {
+                    $('#modifystatus').css( "color", "#FF4B4B" ) ;
+                    $('#modifystatus').html(error);
+                  }
+                  
+                }
+                else if((data == " ")||(data == 'nil')||(data == "")||(data == null))
+                {
+                  $('#modifystatus').css( "color", "#FF4B4B" ) ;
+                  $('#modifystatus').html("Cannot modify password. Please contact administrator.")
+                }
+                else
+                {
+                  assign_html_and_call_change_rtl('pwd_ajax_content',data);
+                  var frgtblocktop = ($(window).height() - $('#login_frgtpwd_box').outerHeight())/2;
+                  $("#login_forgot_pass").modal('show');
+                }
+
+          });
+    }
+  });
+
+});
+
+
+              $('.forgot_pwd_submit').click(function() {
+                // $("#forgot_pwd_close").click();
+               // $(".login_generate_pass").click();
+                // alert("test");
+                // $('#acct1').prop('value',$('#acct').val())
+                window.scrollTo(0,0);
+                  $.post($('#forgotpwd_form').attr("action"),$('#forgotpwd_form').serialize(),function(data){
+                 if (data != "noreset")
+                 {force_pwd = data.split("=")
+                 //$("#secretquestionansreset").hide();
+                $('#secret_question_reset').prop('value','');
+                $('#secret_answer_reset').prop('value','');
+                $('#secret_question_reset').hide();
+                $('#secret_answer_reset').hide();
+
+
+                  if((force_pwd[0]== 'true') || (force_pwd[0]=='false') || (force_pwd[1]=='true' )|| (force_pwd[1]=='false'))
+                  {
+
+                       // $("#forgot_pwd_close").click();
+                        $("#login_forgot_pass").modal("hide");
+                        $("#login_generate_pass").modal("show");
+
+                       $('#resetpwd_form').each (function(){
+                         this.reset();
+                       });
+                       $('#resetpwd_res').hide();
+                       $('.reset_pwd_submit').css( "display", "inline" ) ;
+                       if(force_pwd[0]== 'true'){
+                         $('#webpwdreset').css( "display", "block" ) ;
+                       }
+                       if(force_pwd[1]== 'true'){
+                       $('#tuipwdreset').css( "display", "block" ) ;
+                       }else{
+                       $('#tuipwdreset').css( "display", "none" ) ;
+                       }
+        }else
+                   {
+                    $('#login__res').html(force_pwd[1]);
+                    $("#login__res").show();
+                     $('#secret_answer').prop('value',"");
+
+                   }
+                   }
+                    else
+                     {
+
+                       $("#forgot_pwd_close").click();
+                      $('#modifystatus').html("Login Successful But Your Feature Plan Does Not Allow Reset Password.");
+
+                     }
+                      });
+
+
+      });
+              $("#reset_pwd_close").click(function(){
+                $("#login_forgot_pass").modal("hide");
+                $("#login_generate_pass").modal("hide");
+              });
+
+            function show_error_message(error){
+              $('#resetpwd_res').css( "color", "#FF4B4B" ) ;
+              $('#resetpwd_content').css( "display", "inline" ) ;
+              $('.reset_pwd_submit').css( "display", "inline" ) ;
+              $('#cancelreset').css('display','inline');
+              $('#resetpwd_res').show().text(error);
+
+            }
+
+            $('.reset_pwd_submit').click(function() {
+            	 if($('#webpwdreset').css("display")!="none"&&($('#login_password').prop('value')==""||$('#login_password').prop('value')==null))
+            	 {
+                 show_error_message("Please enter the password fields");
+            	 }
+            	 else
+            	 {
+            	 if($('#tuipwdreset').css("display")!="none"&&($('#tui_pwd').prop('value')==""||$('#tui_pwd').prop('value')==null))
+            	 {
+                 show_error_message("Please enter the password fields");
+            	 }
+            	 else
+            	 {
+            	 if(($('#secret_answer_reset').prop('value').trim()==""||$('#secret_answer_reset').prop('value').trim()==null) && !($("#secret_answer_reset").is(":hidden")))
+            	 {
+                 show_error_message("Please enter the secret answer");
+            	 	return false;
+            	 }
+            	 else{
+            $('#secret_answer1').prop('value',$('#secret_answer').prop('value'))
+            }
+            $('#acct2').prop('value',$('#acct1').prop('value'))
+
+            $('.reset_pwd_submit').css( "display", "none" ) ;
+            $('#resetpwd_content').css( "display", "none" ) ;
+            $('#cancelreset').css('display','none');
+             $('#resetpwd_res').html($('#loaderimg').html());
+             window.scrollTo(0,0);
+             if(document.getElementById('login_password').value!=document.getElementById('r_new_pwd').value)
+             {
+              $('#resetpwd_res').css( "color", "#FF4B4B" ) ;
+                  $('#resetpwd_content').css( "display", "inline" ) ;
+                  $('.reset_pwd_submit').css( "display", "inline" ) ;
+                  $('#cancelreset').css('display','inline');
+                  $('#resetpwd_res').html(" Web passwords didn&#39;t match");
+                $('#password').prop('value',"");
+                  $('#password').focus();
+             }
+              if(document.getElementById('tui_pwd').value!=document.getElementById('r_tui_pwd').value)
+             {
+              $('#resetpwd_res').css( "color", "#FF4B4B" ) ;
+                  $('#resetpwd_content').css( "display", "inline" ) ;
+                  $('.reset_pwd_submit').css( "display", "inline" ) ;
+                  $('#cancelreset').css('display','inline');
+                  $('#resetpwd_res').html(" Voicemail passwords didn&#39;t match");
+                $('#password').prop('value',"");
+                $('#password').focus();
+             }
+             if((document.getElementById('tui_pwd').value==document.getElementById('r_tui_pwd').value)&&(document.getElementById('login_password').value==document.getElementById('r_new_pwd').value))
+          {
+             $.post($('#resetpwd_form').attr("action"),$('#resetpwd_form').serialize(),function(data){
+
+                msg = data.split("=");
+                if(data.indexOf("Your session has expired. Please login again",0)>-1)
+        error=data
+        else
+          error=msg.slice(1).join('=')
+                if(msg[0] != 0)
+
+                {   $('#resetpwd_res').css( "color", "#FF4B4B" ) ;
+                  $('#resetpwd_content').css( "display", "inline" ) ;
+                  $('.reset_pwd_submit').css( "display", "inline" ) ;
+                  $('#cancelreset').css('display','inline');
+                    $('#resetpwd_res').html(error);
+
+                }
+                  else
+                {
+                  $('#resetpwd_res').css( "color", "green" ) ;
+                  $('#modifystatus').css( "color", "green" ) ;
+                  if($('#webpwdreset').css("display")=="none" && $('#tuipwdreset').css("display")=="none")
+                  $('#modifystatus').html("Secret question-answer is set Successfully");
+                  else
+                  $('#modifystatus').html("Password is changed Successfully");
+                  $('#reset_pwd_close').click();
+                }
+
+                $('#password').prop('value',"");
+                $('#password').focus();
+
+               });
+
+       }
+
+      }
+      }
+      });
+    $(document).ready(function(){
+			$('#modifystatus').css('display','block');
+
+
+
+      });
+    </script>
+
+  			<script src=""></script>
+      		<script src="/javascripts/bootstrap/tour.js?5df98b2dd026540dccc0894422544267"></script>
+      		<script src="/javascripts/bootstrap/bootstrap.min.js?14d449eb8876fa55e1ef3c2cc52b0c17"></script>
+      		<script src="/javascripts/bootstrap/bootstrap-select.min.js?050e08afe68b0642b2c8c8a164b84141"></script>
+      		<script src="/javascripts/bootstrap/bootstrap-typeahead.js?0fe2740add8cde5e944c79298a35a9cc"></script>
+      		<script src="/javascripts/bootstrap/common-script.js?d01bde8ed4343b3839e0124efa7521fe"></script>
+      		<script src="/javascripts/bootstrap/bootstrap_tag.js?762e212e474887426c95f101d575024d"></script>
+      		<script src="/javascripts/bootstrap/daterangepicker.js?eb1562ff9c69ebd379c9986d84302ea4"></script>
+      		<script src="/javascripts/bootstrap/moment.min.js?0474ce9b2c2220f867c4000b69e5c783"></script>
+      		<script src="/javascripts/bootstrap/bootstrap-multiselect.min.js?f1c9817573edb0a438c4dcd466bdc18a"></script>
+
+		</div>
+</body>
+</html>
