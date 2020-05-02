@@ -27,6 +27,7 @@ for photo in my_json:
 print("Number of urls",len(url_list))
 
 #Removing the duplicates from list using set function
-print("Unique urls in photos",len(set(url_list)))
+url_set = set(url_list)
+print("Unique urls in photos",len(url_set))
 
 
